@@ -217,8 +217,15 @@ root@dc0050c79503:/#
 <li><code>-i</code>：允许你对容器内的标准输入（STDIN）进行交互</li>
 </ul>
 <p>可以在容器内运行命令cat /proc/version和ls分别查看当前系统的版本信息和当前目录下的文件列表<br><br>我们可以通过运行exit命令或者使用CTRL+D来退出容器</p>
-<h4 id="启动容器（后台模式）"><a href="#启动容器（后台模式）" class="headerlink" title="启动容器（后台模式）"></a>启动容器（后台模式）</h4><pre><code>runoob@runoob:~$ docker run -d ubuntu:15.10 /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;
+<h4 id="启动容器（后台模式）"><a href="#启动容器（后台模式）" class="headerlink" title="启动容器（后台模式）"></a>启动容器（后台模式）</h4><pre><code>$ docker run -d ubuntu:15.10 /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;
 2b1b7a428627c51ab8810d541d759f072b4fc75487eed05812646b8534a2fe63
+</code></pre><p>这个长字符串叫容器ID，对每个容器来说都是唯一的，我们看他通过容器ID来查看对应的容器发生了什么。</p>
+<pre><code>$ docker ps
+</code></pre><p>CONTAINER ID:容器ID<br>NAMES:自动分配的容器名称<br>在容器内使用docker logs命令，查看容器内的标准输出</p>
+<pre><code>$ docker logs 2b1b7a428627
+</code></pre><h4 id="停止容器"><a href="#停止容器" class="headerlink" title="停止容器"></a>停止容器</h4><pre><code>$ docker stop 2b1b7a428627
+</code></pre><p>也可以把ID换成name，如：</p>
+<pre><code>$ docker stop amazing_cori
 </code></pre>
       
 
