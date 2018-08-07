@@ -199,34 +199,7 @@ var _hmt = _hmt || [];
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>系统环境：<code>win10 pro</code><br><br>前提：<code>开启Hyper-V</code>【<strong>注：开启Hyper-V会导致VMware等虚拟机不能运行，不兼容</strong>】</p>
 <p><strong>安装Toolbox</strong>，下载地址：<a href="https://www.docker.com/get-docker" target="_blank" rel="noopener">toolbox下载地址</a></p>
 <p>双击下载的Docker for Windows install安装文件，一路next，点击Finish完成安装。<br>安装完成通知栏出现<img src="https://i.imgur.com/TnoEIFc.png" alt="小鲸鱼图标">，表示docker正在运行！<br>可以在命令行执行docker version来查看版本号，docker run hello-world来载入测试镜像测试。<br><br>鉴于国内网络问题，后续拉取<code>Docker镜像</code>非常缓慢，我们可以配置加速器来解决，我使用的是网易的镜像地址：<code>http://hub-mirror.c.163.com</code><br><br>新版的 Docker 使用 <code>/etc/docker/daemon.json</code>（<strong>Linux</strong>)或者<code>%programdata%\docker\config\daemon.json</code>（<strong>Windows</strong>） 来配置 Daemon。<br>请在该配置文件中加入（没有该文件的话，请先建一个）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;http://hub-mirror.c.163.com&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><hr></p>
-<h1 id="Dockers-使用"><a href="#Dockers-使用" class="headerlink" title="Dockers 使用"></a>Dockers 使用</h1><h3 id="1-Docker-hello-world"><a href="#1-Docker-hello-world" class="headerlink" title="1. Docker hello world"></a>1. Docker hello world</h3><pre><code>$ docker run ubuntu:15.10 /bin/echo &quot;Hello world&quot;
-Hello world
-</code></pre><p>各个参数解析：</p>
-<ul>
-<li><code>docker</code>:Docker的二进制执行文件。</li>
-<li><code>run</code>：与前面的docker组合来运行一个容器</li>
-<li><code>ubuntu:15.10</code>:指定要运行的镜像，docker首先从本地查找镜像，不存在则从镜像仓库docker hub下载公共镜像。</li>
-<li><code>/bin/echo &quot;Hello world&quot;</code>:在启动的容器里执行的命令</li>
-</ul>
-<h4 id="运行交互式容器"><a href="#运行交互式容器" class="headerlink" title="运行交互式容器"></a>运行交互式容器</h4><p>通过docker两个参数-t -i，让docker运行的容器接收输入输出</p>
-<pre><code>$ docker run -i -t ubuntu:15.10 /bin/bash
-root@dc0050c79503:/#
-</code></pre><ul>
-<li><code>-t</code>：在新容器内指定一个伪终端或终端</li>
-<li><code>-i</code>：允许你对容器内的标准输入（STDIN）进行交互</li>
-</ul>
-<p>可以在容器内运行命令cat /proc/version和ls分别查看当前系统的版本信息和当前目录下的文件列表<br><br>我们可以通过运行exit命令或者使用CTRL+D来退出容器</p>
-<h4 id="启动容器（后台模式）"><a href="#启动容器（后台模式）" class="headerlink" title="启动容器（后台模式）"></a>启动容器（后台模式）</h4><pre><code>$ docker run -d ubuntu:15.10 /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;
-2b1b7a428627c51ab8810d541d759f072b4fc75487eed05812646b8534a2fe63
-</code></pre><p>这个长字符串叫容器ID，对每个容器来说都是唯一的，我们看他通过容器ID来查看对应的容器发生了什么。</p>
-<pre><code>$ docker ps
-</code></pre><p>CONTAINER ID:容器ID<br>NAMES:自动分配的容器名称<br>在容器内使用docker logs命令，查看容器内的标准输出</p>
-<pre><code>$ docker logs 2b1b7a428627
-</code></pre><h4 id="停止容器"><a href="#停止容器" class="headerlink" title="停止容器"></a>停止容器</h4><pre><code>$ docker stop 2b1b7a428627
-</code></pre><p>也可以把ID换成name，如：</p>
-<pre><code>$ docker stop amazing_cori
-</code></pre>
+        
       
 
       
@@ -239,7 +212,15 @@ root@dc0050c79503:/#
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">docker linux 容器</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">容器</a>
         		</li>
       		
 		</ul>
@@ -322,7 +303,15 @@ root@dc0050c79503:/#
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">python 安装 基础语法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安装</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础语法</a>
         		</li>
       		
 		</ul>
@@ -485,6 +474,30 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">python 安装 基础语法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">容器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
               </li>
             
             <div class="clearfix"></div>
