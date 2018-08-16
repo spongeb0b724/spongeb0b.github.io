@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: git | SpongeB0B&#39;s Blog</title>
+  <title>墨者学院在线靶场writeup | SpongeB0B&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="SpongeB0B&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/git/index.html">
+  <meta name="description" content="最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。官网地址，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。 入门WEB页面源代码查看打开是一个HTML页">
+<meta name="keywords" content="write up,墨者学院,在线靶场,burpsuite">
+<meta property="og:type" content="article">
+<meta property="og:title" content="墨者学院在线靶场writeup">
+<meta property="og:url" content="http://yoursite.com/2018/08/16/墨者学院在线靶场writeup/index.html">
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
+<meta property="og:description" content="最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。官网地址，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。 入门WEB页面源代码查看打开是一个HTML页">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-16T10:37:51.841Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpongeB0B&#39;s Blog">
+<meta name="twitter:title" content="墨者学院在线靶场writeup">
+<meta name="twitter:description" content="最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。官网地址，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。 入门WEB页面源代码查看打开是一个HTML页">
   
     <link rel="alternative" href="/atom.xml" title="SpongeB0B&#39;s Blog" type="application/atom+xml">
   
@@ -173,60 +178,223 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-墨者学院在线靶场writeup" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/10/Git使用笔记/" class="archive-article-date">
-  	<time datetime="2018-08-10T09:02:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/10/Git使用笔记/">Git使用笔记</a>
+    <h1 class="article-title" itemprop="name">
+      墨者学院在线靶场writeup
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/08/16/墨者学院在线靶场writeup/" class="archive-article-date">
+  	<time datetime="2018-08-16T08:29:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。<a href="https://www.mozhe.cn" target="_blank" rel="noopener">官网地址</a>，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。<br><code>由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。</code></p>
+<h1 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h1><h6 id="WEB页面源代码查看"><a href="#WEB页面源代码查看" class="headerlink" title="WEB页面源代码查看"></a>WEB页面源代码查看</h6><p>打开是一个HTML页面，鼠标右键被禁用，直接<code>F12</code>，控制台点<code>Elements</code>看源代码,就发现key了</p>
+<h6 id="服务器返回数据查看"><a href="#服务器返回数据查看" class="headerlink" title="服务器返回数据查看"></a>服务器返回数据查看</h6><p><code>F12</code>打开控制台，点击<code>network</code>，点击<code>ip</code>，点<code>heards</code>,然后展开<code>response</code>就可以看到key</p>
+<h6 id="浏览器信息伪造"><a href="#浏览器信息伪造" class="headerlink" title="浏览器信息伪造"></a>浏览器信息伪造</h6><p>题目提示<code>从微信6.0开始，其内嵌的浏览器在User-Agent字符串中增加了NetType,根据页面提示,抓包分析除了判断浏览器类型还判断了微信特有的NetType</code><br>这里可以打开目标网页，发现是一个微信文章，然后使用神器<code>burpsuite</code>抓包(需要在浏览器设置代理，具体设置方法百度，<code>127.0.0.1</code>,端口<code>8080</code>)，先在<code>proxy-&gt;intercept</code>中，点击<code>intercept is off</code>(变成On表示在抓包),点击微信链接，然后在Raw中看到抓到的数据包，然后修改<code>User-Agent</code>为(<code>Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13F69 MicroMessenger/6.6.1 NetType/2G Language/zh_CN</code>),然后鼠标右键<code>Send To Repeater</code>,看见<code>Repeater</code>变成黄色，然后点击<code>Repeater</code>进入重放功能模块，点击<code>GO</code>,右边返回结果里有key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简述：抓包--&gt;改User-Agent--&gt;重放--&gt;返回key</span><br></pre></td></tr></table></figure></p>
+<h6 id="登录密码重置漏洞分析溯源"><a href="#登录密码重置漏洞分析溯源" class="headerlink" title="登录密码重置漏洞分析溯源"></a>登录密码重置漏洞分析溯源</h6><p>同上抓包，chrome设置代理很麻烦，推荐一个插件很方便简洁(falcon proxy)<br>打开目标地址看到一个<code>关于获取某系统帐号权限的说明</code>xxx朝阳群众举报啥的，重置<code>17101304128</code>的密码<br>点击进入重置密码页面，看到下面写你注册的手机号码为<code>18868345809</code>,输入下面给的那个账号和新密码和验证码，点击获取验证码页面会弹出验证码,然后抓包，点击重置密码，把号码换成目标号码，然后重放，返回结果显示<code>{&quot;errorcode&quot;:0,&quot;message&quot;:&quot;&quot;:&quot;\u91cd\u7f6e\u6210\u529f\uff0c\u60a8\u7684key\uff1amozhe1b7a69720b37302d51b4b790760&quot;,&quot;data&quot;:[]}</code>,一看是Unicode编码，拿去在线解一下，得到<code>:&quot;&quot;:&quot;重置成功，您的key：mozhe1b7a69720b37302d51b4b790760</code>,拿到key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简述：输入注册的手机号码等信息--&gt;抓包改成目标号码--&gt;重放--&gt;结果Unicode解码--&gt;key</span><br></pre></td></tr></table></figure></p>
+<h6 id="热点评论刷分漏洞分析溯源"><a href="#热点评论刷分漏洞分析溯源" class="headerlink" title="热点评论刷分漏洞分析溯源"></a>热点评论刷分漏洞分析溯源</h6><p><code>X-Forwarded-For</code>:简称<code>XFF头</code>，它<code>代表客户端</code>，也就是HTTP的<code>请求端真实的IP</code>，只有在通过了HTTP 代理或者负载均衡服务器时才会添加该项。<br>打开目标发现要求对<code>zhangyu</code>这个用户进行点赞到500个以上进入热评，试着点赞，发现第二次点会显示你已经点过赞，但是我们并没有登录，只要在数据包里添加<code>X-Forwarded-For</code>,随便输入ip，又可以点赞，思路肯定是爆破，<code>send to intruder</code>,然后先点<code>clear</code>，选中<code>ip</code>最后一位，点击<code>add</code>,然后<code>payloads</code>里选择<code>payload type</code>为<code>number</code>,在下面<code>form</code>里填<code>1</code>，<code>to</code>填<code>500</code>，<code>Step</code>填<code>1</code>即可，点击<code>start attack</code>，完成爆破，刷新页面拿到key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简述：输入X-Forwarded-For: 10.10.10.1（ip随便输）--&gt;爆破--&gt;拿到key</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢鼓励！｡◕ᴗ◕｡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">write up</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">墨者学院</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">在线靶场</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">burpsuite</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/16/墨者学院在线靶场writeup/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/08/10/Git使用笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git使用笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#入门"><span class="toc-number">1.</span> <span class="toc-text">入门</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#WEB页面源代码查看"><span class="toc-number">1.0.0.0.0.1.</span> <span class="toc-text">WEB页面源代码查看</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#服务器返回数据查看"><span class="toc-number">1.0.0.0.0.2.</span> <span class="toc-text">服务器返回数据查看</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#浏览器信息伪造"><span class="toc-number">1.0.0.0.0.3.</span> <span class="toc-text">浏览器信息伪造</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#登录密码重置漏洞分析溯源"><span class="toc-number">1.0.0.0.0.4.</span> <span class="toc-text">登录密码重置漏洞分析溯源</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#热点评论刷分漏洞分析溯源"><span class="toc-number">1.0.0.0.0.5.</span> <span class="toc-text">热点评论刷分漏洞分析溯源</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2018/08/16/墨者学院在线靶场writeup/",
+  owner: 'yehongning',
+  repo: 'yehongning.github.io',
+  oauth: {
+    client_id: '49ddd2ad51d791ace91c',
+    client_secret: '0b400e3b9dd89b72272e47c7b15fd2a8b031d05c',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -253,9 +421,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
