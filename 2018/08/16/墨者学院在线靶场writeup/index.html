@@ -9,14 +9,14 @@
   <title>墨者学院在线靶场writeup | SpongeB0B&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。官网地址，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。">
-<meta name="keywords" content="write up,墨者学院,在线靶场,burpsuite">
+<meta name="keywords" content="write up,墨者学院,在线靶场,burpsuite,注入,web安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="墨者学院在线靶场writeup">
 <meta property="og:url" content="http://yoursite.com/2018/08/16/墨者学院在线靶场writeup/index.html">
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
 <meta property="og:description" content="最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。官网地址，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-17T01:58:49.445Z">
+<meta property="og:updated_time" content="2018-08-17T02:03:40.955Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="墨者学院在线靶场writeup">
 <meta name="twitter:description" content="最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。官网地址，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。">
@@ -200,12 +200,12 @@ var _hmt = _hmt || [];
       
         <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1296162991&auto=1&height=66"></iframe><br>最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。<a href="https://www.mozhe.cn" target="_blank" rel="noopener">官网地址</a>，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。<br><code>由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。</code></p>
 <a id="more"></a>
-<h1 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h1><h6 id="WEB页面源代码查看"><a href="#WEB页面源代码查看" class="headerlink" title="WEB页面源代码查看"></a>WEB页面源代码查看</h6><p>打开是一个HTML页面，鼠标右键被禁用，直接<code>F12</code>，控制台点<code>Elements</code>看源代码,就发现key了</p>
-<h6 id="服务器返回数据查看"><a href="#服务器返回数据查看" class="headerlink" title="服务器返回数据查看"></a>服务器返回数据查看</h6><p><code>F12</code>打开控制台，点击<code>network</code>，点击<code>ip</code>，点<code>heards</code>,然后展开<code>response</code>就可以看到key</p>
-<h6 id="浏览器信息伪造"><a href="#浏览器信息伪造" class="headerlink" title="浏览器信息伪造"></a>浏览器信息伪造</h6><p>题目提示<code>从微信6.0开始，其内嵌的浏览器在User-Agent字符串中增加了NetType,根据页面提示,抓包分析除了判断浏览器类型还判断了微信特有的NetType</code><br>这里可以打开目标网页，发现是一个微信文章，然后使用神器<code>burpsuite</code>抓包(需要在浏览器设置代理，具体设置方法百度，<code>127.0.0.1</code>,端口<code>8080</code>)，先在<code>proxy-&gt;intercept</code>中，点击<code>intercept is off</code>(变成On表示在抓包),点击微信链接，然后在Raw中看到抓到的数据包，然后修改<code>User-Agent</code>为(<code>Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13F69 MicroMessenger/6.6.1 NetType/2G Language/zh_CN</code>),然后鼠标右键<code>Send To Repeater</code>,看见<code>Repeater</code>变成黄色，然后点击<code>Repeater</code>进入重放功能模块，点击<code>GO</code>,右边返回结果里有key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简述：抓包--&gt;改User-Agent--&gt;重放--&gt;返回key</span><br></pre></td></tr></table></figure></p>
-<h6 id="登录密码重置漏洞分析溯源"><a href="#登录密码重置漏洞分析溯源" class="headerlink" title="登录密码重置漏洞分析溯源"></a>登录密码重置漏洞分析溯源</h6><p>同上抓包，chrome设置代理很麻烦，推荐一个插件很方便简洁(falcon proxy)<br>打开目标地址看到一个<code>关于获取某系统帐号权限的说明</code>xxx朝阳群众举报啥的，重置<code>17101304128</code>的密码<br>点击进入重置密码页面，看到下面写你注册的手机号码为<code>18868345809</code>,输入下面给的那个账号和新密码和验证码，点击获取验证码页面会弹出验证码,然后抓包，点击重置密码，把号码换成目标号码，然后重放，返回结果显示<code>{&quot;errorcode&quot;:0,&quot;message&quot;:&quot;&quot;:&quot;\u91cd\u7f6e\u6210\u529f\uff0c\u60a8\u7684key\uff1amozhe1b7a69720b37302d51b4b790760&quot;,&quot;data&quot;:[]}</code>,一看是Unicode编码，拿去在线解一下，得到<code>:&quot;&quot;:&quot;重置成功，您的key：mozhe1b7a69720b37302d51b4b790760</code>,拿到key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简述：输入注册的手机号码等信息--&gt;抓包改成目标号码--&gt;重放--&gt;结果Unicode解码--&gt;key</span><br></pre></td></tr></table></figure></p>
-<h6 id="热点评论刷分漏洞分析溯源"><a href="#热点评论刷分漏洞分析溯源" class="headerlink" title="热点评论刷分漏洞分析溯源"></a>热点评论刷分漏洞分析溯源</h6><p><code>X-Forwarded-For</code>:简称<code>XFF头</code>，它<code>代表客户端</code>，也就是HTTP的<code>请求端真实的IP</code>，只有在通过了HTTP 代理或者负载均衡服务器时才会添加该项。<br>打开目标发现要求对<code>zhangyu</code>这个用户进行点赞到500个以上进入热评，试着点赞，发现第二次点会显示你已经点过赞，但是我们并没有登录，只要在数据包里添加<code>X-Forwarded-For</code>,随便输入ip，又可以点赞，思路肯定是爆破，<code>send to intruder</code>,然后先点<code>clear</code>，选中<code>ip</code>最后一位，点击<code>add</code>,然后<code>payloads</code>里选择<code>payload type</code>为<code>number</code>,在下面<code>form</code>里填<code>1</code>，<code>to</code>填<code>500</code>，<code>Step</code>填<code>1</code>即可，点击<code>start attack</code>，完成爆破，刷新页面拿到key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简述：输入X-Forwarded-For: 10.10.10.1（ip随便输）--&gt;爆破--&gt;拿到key</span><br></pre></td></tr></table></figure></p>
-<h6 id="投票常见漏洞分析溯源"><a href="#投票常见漏洞分析溯源" class="headerlink" title="投票常见漏洞分析溯源"></a>投票常见漏洞分析溯源</h6><p>这个就是<code>浏览器信息伪造</code>+<code>热点评论刷分漏洞分析溯源</code>的结合。爆破刷分就好了</p>
+<h1 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h1><h5 id="WEB页面源代码查看"><a href="#WEB页面源代码查看" class="headerlink" title="WEB页面源代码查看"></a>WEB页面源代码查看</h5><p>打开是一个HTML页面，鼠标右键被禁用，直接<code>F12</code>，控制台点<code>Elements</code>看源代码,就发现key了</p>
+<h5 id="服务器返回数据查看"><a href="#服务器返回数据查看" class="headerlink" title="服务器返回数据查看"></a>服务器返回数据查看</h5><p><code>F12</code>打开控制台，点击<code>network</code>，点击<code>ip</code>，点<code>heards</code>,然后展开<code>response</code>就可以看到key</p>
+<h5 id="浏览器信息伪造"><a href="#浏览器信息伪造" class="headerlink" title="浏览器信息伪造"></a>浏览器信息伪造</h5><p>题目提示<code>从微信6.0开始，其内嵌的浏览器在User-Agent字符串中增加了NetType,根据页面提示,抓包分析除了判断浏览器类型还判断了微信特有的NetType</code><br>这里可以打开目标网页，发现是一个微信文章，然后使用神器<code>burpsuite</code>抓包(需要在浏览器设置代理，具体设置方法百度，<code>127.0.0.1</code>,端口<code>8080</code>)，先在<code>proxy-&gt;intercept</code>中，点击<code>intercept is off</code>(变成On表示在抓包),点击微信链接，然后在Raw中看到抓到的数据包，然后修改<code>User-Agent</code>为(<code>Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13F69 MicroMessenger/6.6.1 NetType/2G Language/zh_CN</code>),然后鼠标右键<code>Send To Repeater</code>,看见<code>Repeater</code>变成黄色，然后点击<code>Repeater</code>进入重放功能模块，点击<code>GO</code>,右边返回结果里有key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简述：抓包--&gt;改User-Agent--&gt;重放--&gt;返回key</span><br></pre></td></tr></table></figure></p>
+<h5 id="登录密码重置漏洞分析溯源"><a href="#登录密码重置漏洞分析溯源" class="headerlink" title="登录密码重置漏洞分析溯源"></a>登录密码重置漏洞分析溯源</h5><p>同上抓包，chrome设置代理很麻烦，推荐一个插件很方便简洁(falcon proxy)<br>打开目标地址看到一个<code>关于获取某系统帐号权限的说明</code>xxx朝阳群众举报啥的，重置<code>17101304128</code>的密码<br>点击进入重置密码页面，看到下面写你注册的手机号码为<code>18868345809</code>,输入下面给的那个账号和新密码和验证码，点击获取验证码页面会弹出验证码,然后抓包，点击重置密码，把号码换成目标号码，然后重放，返回结果显示<code>{&quot;errorcode&quot;:0,&quot;message&quot;:&quot;&quot;:&quot;\u91cd\u7f6e\u6210\u529f\uff0c\u60a8\u7684key\uff1amozhe1b7a69720b37302d51b4b790760&quot;,&quot;data&quot;:[]}</code>,一看是Unicode编码，拿去在线解一下，得到<code>:&quot;&quot;:&quot;重置成功，您的key：mozhe1b7a69720b37302d51b4b790760</code>,拿到key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简述：输入注册的手机号码等信息--&gt;抓包改成目标号码--&gt;重放--&gt;结果Unicode解码--&gt;key</span><br></pre></td></tr></table></figure></p>
+<h5 id="热点评论刷分漏洞分析溯源"><a href="#热点评论刷分漏洞分析溯源" class="headerlink" title="热点评论刷分漏洞分析溯源"></a>热点评论刷分漏洞分析溯源</h5><p><code>X-Forwarded-For</code>:简称<code>XFF头</code>，它<code>代表客户端</code>，也就是HTTP的<code>请求端真实的IP</code>，只有在通过了HTTP 代理或者负载均衡服务器时才会添加该项。<br>打开目标发现要求对<code>zhangyu</code>这个用户进行点赞到500个以上进入热评，试着点赞，发现第二次点会显示你已经点过赞，但是我们并没有登录，只要在数据包里添加<code>X-Forwarded-For</code>,随便输入ip，又可以点赞，思路肯定是爆破，<code>send to intruder</code>,然后先点<code>clear</code>，选中<code>ip</code>最后一位，点击<code>add</code>,然后<code>payloads</code>里选择<code>payload type</code>为<code>number</code>,在下面<code>form</code>里填<code>1</code>，<code>to</code>填<code>500</code>，<code>Step</code>填<code>1</code>即可，点击<code>start attack</code>，完成爆破，刷新页面拿到key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简述：输入X-Forwarded-For: 10.10.10.1（ip随便输）--&gt;爆破--&gt;拿到key</span><br></pre></td></tr></table></figure></p>
+<h5 id="投票常见漏洞分析溯源"><a href="#投票常见漏洞分析溯源" class="headerlink" title="投票常见漏洞分析溯源"></a>投票常见漏洞分析溯源</h5><p>这个就是<code>浏览器信息伪造</code>+<code>热点评论刷分漏洞分析溯源</code>的结合。爆破刷分就好了</p>
 
       
 
@@ -263,6 +263,14 @@ var _hmt = _hmt || [];
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">burpsuite</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">注入</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
         		</li>
       		
 		</ul>
@@ -361,7 +369,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#入门"><span class="toc-number">1.</span> <span class="toc-text">入门</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#WEB页面源代码查看"><span class="toc-number">1.0.0.0.0.1.</span> <span class="toc-text">WEB页面源代码查看</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#服务器返回数据查看"><span class="toc-number">1.0.0.0.0.2.</span> <span class="toc-text">服务器返回数据查看</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#浏览器信息伪造"><span class="toc-number">1.0.0.0.0.3.</span> <span class="toc-text">浏览器信息伪造</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#登录密码重置漏洞分析溯源"><span class="toc-number">1.0.0.0.0.4.</span> <span class="toc-text">登录密码重置漏洞分析溯源</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#热点评论刷分漏洞分析溯源"><span class="toc-number">1.0.0.0.0.5.</span> <span class="toc-text">热点评论刷分漏洞分析溯源</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#投票常见漏洞分析溯源"><span class="toc-number">1.0.0.0.0.6.</span> <span class="toc-text">投票常见漏洞分析溯源</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#入门"><span class="toc-number">1.</span> <span class="toc-text">入门</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#WEB页面源代码查看"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">WEB页面源代码查看</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#服务器返回数据查看"><span class="toc-number">1.0.0.0.2.</span> <span class="toc-text">服务器返回数据查看</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#浏览器信息伪造"><span class="toc-number">1.0.0.0.3.</span> <span class="toc-text">浏览器信息伪造</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#登录密码重置漏洞分析溯源"><span class="toc-number">1.0.0.0.4.</span> <span class="toc-text">登录密码重置漏洞分析溯源</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#热点评论刷分漏洞分析溯源"><span class="toc-number">1.0.0.0.5.</span> <span class="toc-text">热点评论刷分漏洞分析溯源</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#投票常见漏洞分析溯源"><span class="toc-number">1.0.0.0.6.</span> <span class="toc-text">投票常见漏洞分析溯源</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -563,6 +571,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web安全</a>
               </li>
             
             <div class="clearfix"></div>
