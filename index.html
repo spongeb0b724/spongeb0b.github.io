@@ -175,19 +175,19 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-学习恶意软件分析应该掌握什么语言" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-学习恶意软件分析应该掌握哪些语言" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/18/学习恶意软件分析应该掌握什么语言/">学习恶意软件分析应该掌握什么语言</a>
+      <a class="article-title" href="/2018/09/18/学习恶意软件分析应该掌握哪些语言/">学习恶意软件分析应该掌握哪些语言</a>
     </h1>
   
 
         
-        <a href="/2018/09/18/学习恶意软件分析应该掌握什么语言/" class="archive-article-date">
+        <a href="/2018/09/18/学习恶意软件分析应该掌握哪些语言/" class="archive-article-date">
   	<time datetime="2018-09-18T08:11:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
 </a>
         
@@ -195,7 +195,23 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=464192863&auto=1&height=66"></iframe></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>作为一枚菜鸡，最近闲着没事学了一下恶意软件分析，所以就把学习心得总结了一下，如果有错误或者不足的地方还请各位大佬指正。这里只简单总结了一下PC端的恶意软件分析，不会介绍物联网和移动设备的恶意软件，那个更加专业，也不太了解。</p>
+<h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><p>相信作为安全爱好者，再熟悉不过。无论是<code>ctf</code>还是<code>渗透测试</code>或是<code>逆向工程</code>都可以极大的提高我们的工作效率。<code>python</code>具有很好的可读性和快速开发的潜力，学习成本也相对较低。它也可以很好的跨平台使用，我主要工作环境还是windos。</p>
+<h3 id="操作恶意软件"><a href="#操作恶意软件" class="headerlink" title="操作恶意软件"></a>操作恶意软件</h3><p>利用python可以很好的复制恶意软件的组件，或者与恶意软件本身进行交互进而分析它的工作方式，加快分析速度，可以解决一些逆向恶意软件并把转换成模块化时遇到的问题等。帮助处理一些繁琐的工作。分析恶意软件不可能直接在联网的环境中运行，但是可以通过python控制它的作用，阻断发送真实数据给黑客或让它访问<code>蜜罐</code>。</p>
+<h3 id="调试器扩展"><a href="#调试器扩展" class="headerlink" title="调试器扩展"></a>调试器扩展</h3><p>通常分析过程都是重复并且枯燥的，非常耗时间，利用python自动化处理是非常棒的，每个调试器和反汇编工具都有自己内置的脚本语言，学一堆不同的脚本语言是非常没有意义的，现在大多数调试工具都支持python，比如<code>IDA pro</code>。<br>有时候可以使用python脚本遍历二进制文件中的每个加密字符串，然后解密并存储，不需要运行恶意软件。</p>
+<h3 id="任务自动化"><a href="#任务自动化" class="headerlink" title="任务自动化"></a>任务自动化</h3><p>python第三方库非常丰富，可以实现各种功能，很方便的编写脚本完成任务，不需要自己从头开始编写代码，比如可以使用脚本检查命令和控制域，上传文件或查询virustotal上的文件，加载虚拟机用来分析恶意软件，配置服务器，python号称编程的<code>瑞士军刀</code>，对于日常任务和恶意软件分析来说，学习python是很有意义的。</p>
+<h1 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h1><p>一般入门学习的第一门语言都是C语言，对于C语言不太建议用来编写程序（效率相对较低），但是学习和理解它是必要的。</p>
+<h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h3><p>在分析恶意软件的工程中经常会遇到不熟悉的功能，想要理解函数的功能和参数，以及初始化和返回值，最好的办法就是查找阅读文档。<br>如何引用如何使用都可以查看它的定义和包含的数据类型，然后查找每个单独数据类型了解它是什么。</p>
+<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p>像windows这种封闭源操作系统，有很多数据结构和功能没有文档，通常是不应该给非Microsoft以外的员工使用的，这些通常被称为windows internals。恶意软件开发人员喜欢滥用内部部件绕过安全机制，或者混淆不熟悉这些部件的分析人员。虽然可以对操作系统本身进行逆向工程来理解其内部结构，但是它非常耗时并且困难，如果直接阅读C代码可能会更快的理解。</p>
+<h6 id="ReactOS源代码"><a href="#ReactOS源代码" class="headerlink" title="ReactOS源代码"></a>ReactOS源代码</h6><p>ReactOS是一个用C语言编写的开源操作系统，旨在与window server 2003可执行文件兼容，为了保持与window二进制文件兼容性，开发人员不得不对大部分NT5.2（驱动windows 2000，windows sever 2003和windows XP的windows操作系统核心版本）进行逆向工程和重新实现，因此可以通过阅读ReactOS来理解windows内部。</p>
+<h6 id="Windows-Research-Kernel"><a href="#Windows-Research-Kernel" class="headerlink" title="Windows Research Kernel"></a>Windows Research Kernel</h6><p>Windows Research Kernel（WRK）是微软为研究人员提供的NTOS内核源代码的一个子集，它包含了大部分核心内核源代码，虽然WRK只包含windows的内核部分，仍然可以帮助我们理解非内核恶意软件，因为内核的某些部分通过“Native API”暴露给用户态应用程序，而Native API经常被rootkit滥用。最初WRK很难获得（它仅作为各种基于计算机科学的程序的一部分提供给认可的大学），但从那时起，一些旧版本已经发布到GitHub，因此是公开的。虽然WRK不如ReactOS完整，但它有一些好处，例如包含64位Windows内核的代码。</p>
+<h6 id="IDA-pro伪代码"><a href="#IDA-pro伪代码" class="headerlink" title="IDA pro伪代码"></a>IDA pro伪代码</h6><p>IDA pro可以选择将程序集显示为<code>伪代码</code>，导致它提供与程序集匹配的代码。<br>虽然IDA伪代码在技术上并不是有效的C语言，但是对于熟悉C语言的人来说已经非常清晰了，提供阅读伪代码就可以知道这些代码进行了什么操作，非常节省时间，不用费力的理解汇编代码。</p>
+<h1 id="汇编语言"><a href="#汇编语言" class="headerlink" title="汇编语言"></a>汇编语言</h1><p>汇编语言（assembly language，通常缩写ASM）是人类可读的最底层语言，计算机CPU实际理解的唯一语言，C，C++,Golang等语言都被编译为机器代码，所以大多数软件都可以使用反汇编程序。<br>不同类型的CPU接受不同类型的指令，因此学习汇编时，实际上是<code>学习CPU指令集</code>，目前只有2个指令集是常用的。</p>
+<h3 id="i386"><a href="#i386" class="headerlink" title="i386"></a>i386</h3><p>i386（<code>Intel 80386</code>的缩写）是X86指令集的32位版本，几乎所有32位台式计算机，服务器和笔记本电脑都是使用它，这和机器运行windows还是linux或者mac，不重要，如果它是32位，那么CPU可能是基于i386的，我们通常谈论的是i386汇编，在64位操作系统，32位的应用程序仍然正常运行，所以大部分windows恶意软件开发人员只会编写32位恶意软件，既适应32位又兼容64位系统。</p>
+<h3 id="X86-64"><a href="#X86-64" class="headerlink" title="X86_64"></a>X86_64</h3><p>这是X86的64位版本，也是现代计算机最常用的指令集，由于X86系列中的体系结构保持了强大的向后兼容性，大多数64位指令非常类似i386指令，一般是先学习i386汇编再学习X86_64。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>没有任何捷径可以直接从脚本小子跳到恶意软件逆向工程师，所以学习编程是非常有必要的，特别是C语言和汇编，可以让你更快速了解计算机的工作原理，学习其他编程语言。不管是否要成为恶意软件分析师，学习编程语言只会有利无弊，语言基础就像砖头，没有砖头就盖不了大厦。</p>
+
       
 
       
@@ -203,11 +219,30 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">恶意软件分析</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/18/学习恶意软件分析应该掌握什么语言/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/18/学习恶意软件分析应该掌握哪些语言/">展开全文 >></a>
         </p>
       
 
@@ -953,27 +988,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color3">安装</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">容器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">镜像</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1001,15 +1024,39 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安装</a>
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">容器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">镜像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
               </li>
              
               <li class="article-tag-list-item">

