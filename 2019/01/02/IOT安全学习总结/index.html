@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
 <meta property="og:description" content="前沿因为我的专业是物联网。所以有一点点（真的只是一点，感觉都会一邪恶但是），前段时间空了也看会物联网安全相关的paper以及相关的漏洞分析（因为毕设做漏扫工具需要这块的poc）。所以抽空总结一下。如果写错或者不恰当的地方也请各位大佬斧正。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-15T02:26:04.512Z">
+<meta property="og:updated_time" content="2019-01-17T02:24:07.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IOT安全学习总结">
 <meta name="twitter:description" content="前沿因为我的专业是物联网。所以有一点点（真的只是一点，感觉都会一邪恶但是），前段时间空了也看会物联网安全相关的paper以及相关的漏洞分析（因为毕设做漏扫工具需要这块的poc）。所以抽空总结一下。如果写错或者不恰当的地方也请各位大佬斧正。">
@@ -198,7 +198,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><video controls autoplay name="media"><source src="http://other.web.rp01.sycdn.kuwo.cn/resource/n2/35/40/4017239903.mp3" type="audio/mpeg"></video></p>
+        <p><video controls name="media"><source src="http://other.web.rp01.sycdn.kuwo.cn/resource/n2/35/40/4017239903.mp3" type="audio/mpeg"></video></p>
 <h1 id="前沿"><a href="#前沿" class="headerlink" title="前沿"></a>前沿</h1><p>因为我的专业是物联网。所以有一点点（真的只是一点，感觉都会一邪恶但是），前段时间空了也看会物联网安全相关的paper以及相关的漏洞分析（因为毕设做漏扫工具需要这块的poc）。所以抽空总结一下。如果写错或者不恰当的地方也请各位大佬斧正。<br><a id="more"></a></p>
 <h1 id="什么是物联网安全"><a href="#什么是物联网安全" class="headerlink" title="什么是物联网安全"></a>什么是物联网安全</h1><p>近几年iot发展越来越快，但暴露出的安全问题也是层出不穷，相信在ipv6普及以后，物联网可能会井喷式发展，所以当下解决物联网安全问题也是网络安全中的一个重要话题。<br>物联网安全也是当下比较热门的领域，目前主要可以分为<code>智能硬件</code>（智能家居、智慧医疗、车载物联网等等）和<code>工业控制物联网</code>两大块。<br>物联网包含的知识也很多，需要学习<code>研究对象的通信协议</code>和<code>硬件电路分析</code>、<code>固件提取&amp;逆向工程&amp;代码植入</code>、还有一些<code>安全弱点</code>（传统安全问题在新领域的复制:大致包含<code>登录验证</code>，<code>弱口令</code>，<code>弱加密</code>，<code>溢出漏洞</code>，<code>固件更新漏洞</code>，<code>敏感信息泄露</code>，<code>不安全的访问控制</code>，<code>嵌入式系统遗留的漏洞</code>等等，也是目前体现比较多的问题）等。<br>以上的研究 <strong>前提:有钱</strong> ，只要接触到硬件相关的，没钱是不行的，随便买个仪器设备和研究的设备都要花大把的银子，设备可以试着申请一些厂商的众测。设备的话国产和进口的很多差了一个0不止，如果自己玩的话，国产就够用了，主要的差别是一些精度、频率上的问题，还有一些发热问题。</p>
 <h1 id="智能硬件安全"><a href="#智能硬件安全" class="headerlink" title="智能硬件安全"></a>智能硬件安全</h1><p>物联网设备通信模式可以分为：<code>云模式</code>、<code>网关模式</code>、<code>直连模式</code>。<br>对于智能设备，大多采用前两种，如果采用传统的安全检测方法，对上位机逆向，云服务器渗透，通信抓包等方法能获取到部分信息，如果需要深入研究设备底层的工作原理，挖掘更深层次的漏洞，就必需接触硬件本身，下面简单介绍一些电路分析和芯片固件提取和调试。</p>
@@ -709,6 +709,26 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">BurpSuite使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
               </li>
             
             <div class="clearfix"></div>

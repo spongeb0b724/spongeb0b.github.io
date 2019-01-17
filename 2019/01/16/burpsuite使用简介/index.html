@@ -9,6 +9,7 @@
   <title>burpsuite使用简介 | SpongeB0B&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="上次讲解了burpsuite pro v2beta安装激活，现在就来介绍一下burpsuite的简单使用，这里只介绍一些在CTF常用的功能，对于渗透扫描等高级的功能童鞋们就自己看资料学习吧，目的是教会萌新小白简单使用抓包，爆破等功能。演示环境采用靶场，实际环境可能存在一些防护需自己灵活变通。">
+<meta name="keywords" content="BurpSuite使用,抓包,爆破,刷票,逻辑漏洞">
 <meta property="og:type" content="article">
 <meta property="og:title" content="burpsuite使用简介">
 <meta property="og:url" content="http://yoursite.com/2019/01/16/burpsuite使用简介/index.html">
@@ -39,7 +40,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/16/kSc4Xt.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/16/kScbtg.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/16/kSgmB6.png">
-<meta property="og:updated_time" content="2019-01-16T11:37:18.061Z">
+<meta property="og:updated_time" content="2019-01-17T02:23:01.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="burpsuite使用简介">
 <meta name="twitter:description" content="上次讲解了burpsuite pro v2beta安装激活，现在就来介绍一下burpsuite的简单使用，这里只介绍一些在CTF常用的功能，对于渗透扫描等高级的功能童鞋们就自己看资料学习吧，目的是教会萌新小白简单使用抓包，爆破等功能。演示环境采用靶场，实际环境可能存在一些防护需自己灵活变通。">
@@ -222,7 +223,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><video controls autoplay name="media"><source src="http://112.253.22.165/24/z/b/p/p/zbppreegjspbuetpmcirwtqvkovgkc/hd.yinyuetai.com/C9400165153FA517CA946E1FCD212194.mp4" type="video/mp4"></video><br>上次讲解了<code>burpsuite pro v2beta安装激活</code>，现在就来介绍一下burpsuite的简单使用，这里只介绍一些在CTF常用的功能，对于渗透扫描等高级的功能童鞋们就自己看资料学习吧，目的是教会萌新小白简单使用抓包，爆破等功能。演示环境采用靶场，实际环境可能存在一些防护需自己灵活变通。<br><a id="more"></a></p>
+        <p><video controls name="media"><source src="http://112.253.22.165/24/z/b/p/p/zbppreegjspbuetpmcirwtqvkovgkc/hd.yinyuetai.com/C9400165153FA517CA946E1FCD212194.mp4" type="video/mp4"></video><br>上次讲解了<code>burpsuite pro v2beta安装激活</code>，现在就来介绍一下burpsuite的简单使用，这里只介绍一些在CTF常用的功能，对于渗透扫描等高级的功能童鞋们就自己看资料学习吧，目的是教会萌新小白简单使用抓包，爆破等功能。演示环境采用靶场，实际环境可能存在一些防护需自己灵活变通。<br><a id="more"></a></p>
 <h1 id="抓包代理配置"><a href="#抓包代理配置" class="headerlink" title="抓包代理配置"></a>抓包代理配置</h1><h3 id="burpsuite代理设置"><a href="#burpsuite代理设置" class="headerlink" title="burpsuite代理设置"></a>burpsuite代理设置</h3><p><code>burpsuite</code>默认设置了代理<code>127.0.0.1:8080</code>如果端口冲突可以修改成其他的。<strong>注：</strong> 浏览器中配置代理时，端口必须<code>burpsuite</code>配置中的一样。<br><a href="https://imgchr.com/i/kS8whF" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/01/16/kS8whF.md.png" alt="kS8whF.md.png"></a></p>
 <h3 id="IE浏览器代理设置"><a href="#IE浏览器代理设置" class="headerlink" title="IE浏览器代理设置"></a>IE浏览器代理设置</h3><p>这里使用<code>Internet Explorer 11</code>为例，其他版本IE浏览器设置类似。<br>打开IE浏览器，在右上角<code>工具</code>中选择<code>Internet选项</code>，或者在菜单栏选择工具<code>Internet选项</code><br><img src="https://s2.ax1x.com/2019/01/16/kS12K1.png" alt="kS12K1.png"><br>选择<code>连接</code>–&gt;点击<code>局域网设置</code>，勾上<code>为LAN使用代理服务器前打勾</code>，ip输入<code>127.0.0.1</code>，端口输入<code>8080</code><br><img src="https://s2.ax1x.com/2019/01/16/kS8Qfg.png" alt="kS8Qfg.png"></p>
 <h3 id="chrome浏览器代理设置"><a href="#chrome浏览器代理设置" class="headerlink" title="chrome浏览器代理设置"></a>chrome浏览器代理设置</h3><p>这里使用的是<code>google chrome版本 71.0.3578.98(64位版本)</code>，其他的设置也类似<br>对于chrome有很多优秀的插件很方便切换代理<code>Falcon Proxy</code>，<code>Proxy SwitchyOmega</code>等。<br>先讲讲不用插件设置的方法。<br>可以在浏览器url输入框内输入：<code>chrome://settings/</code>，点击<code>高级</code>，点击<code>系统</code>下面的打开代理设置，弹窗出来和IE设置方法一样。其他版本的<code>chrome浏览器</code>设置代理的按钮位置略有区别。<br><a href="https://imgchr.com/i/kSGD58" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/01/16/kSGD58.md.png" alt="kSGD58.md.png"></a><br>推荐可以使用的是<code>Falcon Proxy</code>,配置简单操作方便。<br><img src="https://s2.ax1x.com/2019/01/16/kSJZIf.png" alt="kSJZIf.png"><br><img src="https://s2.ax1x.com/2019/01/16/kSJVdP.png" alt="kSJVdP.png"></p>
@@ -274,6 +275,33 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">BurpSuite使用</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">抓包</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爆破</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">刷票</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">逻辑漏洞</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -713,6 +741,26 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">BurpSuite使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
               </li>
             
             <div class="clearfix"></div>
