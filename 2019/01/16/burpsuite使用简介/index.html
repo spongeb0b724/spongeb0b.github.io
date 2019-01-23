@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/16/kSc4Xt.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/16/kScbtg.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/16/kSgmB6.png">
-<meta property="og:updated_time" content="2019-01-17T02:23:01.514Z">
+<meta property="og:updated_time" content="2019-01-23T11:57:29.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="burpsuite使用简介">
 <meta name="twitter:description" content="上次讲解了burpsuite pro v2beta安装激活，现在就来介绍一下burpsuite的简单使用，这里只介绍一些在CTF常用的功能，对于渗透扫描等高级的功能童鞋们就自己看资料学习吧，目的是教会萌新小白简单使用抓包，爆破等功能。演示环境采用靶场，实际环境可能存在一些防护需自己灵活变通。">
@@ -235,7 +235,7 @@ var _hmt = _hmt || [];
 <h3 id="任意账号密码重置逻辑漏洞"><a href="#任意账号密码重置逻辑漏洞" class="headerlink" title="任意账号密码重置逻辑漏洞"></a>任意账号密码重置逻辑漏洞</h3><p>这种算是一个非法获取验证码逻辑漏洞，和前两年很火的微商平台<code>一分钱买iPhone</code>的操作和原理是一样的。类似的还有修改ID，用户名以及cookie等达到一些非法目的。这种逻辑漏洞的原因是后台没有对数据包进行账号关联性效验。<br><img src="https://s2.ax1x.com/2019/01/16/kS6siQ.png" alt="kS6siQ.png"><br>打开网页，填写系统给的自己<code>电话号码</code>、<code>新密码</code>、<code>图片验证码</code>，获取到<code>验证码</code>以后，开启<code>burpsuite</code>抓包功能，点击<code>重置密码</code>按钮，修改数据包中<code>mobile</code>为<code>对方的手机号码</code>，如果存在逻辑漏洞，发送出去就成功修改了。<br><img src="https://s2.ax1x.com/2019/01/16/kS6yGj.png" alt="kS6yGj.png"></p>
 <h3 id="刷票、爆破功能"><a href="#刷票、爆破功能" class="headerlink" title="刷票、爆破功能"></a>刷票、爆破功能</h3><p><code>burpsuite</code>还有一个很强大的功能就是<code>intruder</code>选项卡的爆破功能。<br>这个功能也可以用来对存在漏洞的投票系统进行刷票。<br>这里拿一个微信投票系统的题目进行演示<br><img src="https://s2.ax1x.com/2019/01/16/kScT78.png" alt="kScT78.png"><br>通过百度可以知道微信数据包请求头的<code>User-Agent: (Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13F69 MicroMessenger/6.6.1 NetType/2G Language/zh_CN</code>。<br>开启<code>burpsuite</code>，这里我们<code>a2019</code>这个用户票数刷到第一吧。点击<code>投票</code>按钮，把数据包中的<code>User-Agent:</code>改掉，由于这里我们是匿名投票，那么他是怎么记录的呢？肯定是通过ip记录的吧，我们在数据包中加入<code>XXF头</code>，前面也说了什么是<code>XXF头</code>。随便输入一个ip值。<br><img src="https://s2.ax1x.com/2019/01/16/kSco0f.png" alt="kSco0f.png"><br>然后右键<code>send to intruder</code>,在<code>positions</code>中点击<code>clear</code>清除所以默认的爆破参数，然后选择ip最后一位，点击<code>add</code>。<br><img src="https://s2.ax1x.com/2019/01/16/kScHAS.png" alt="kScHAS.png"><br>在<code>payload</code>页面中选择<code>payload type</code>为<code>number</code>，下面设置起始值和步长，点击右上角<code>start attack</code>按钮<br><img src="https://s2.ax1x.com/2019/01/16/kScInP.png" alt="kScInP.png"><br><img src="https://s2.ax1x.com/2019/01/16/kSc4Xt.png" alt="kSc4Xt.png"><br>等待爆破结束。可以看到刷票成功。<br><img src="https://s2.ax1x.com/2019/01/16/kScbtg.png" alt="kScbtg.png"><br><strong>注:</strong> 如果是爆破密码，根据需求选择字典或者自己导入字典。</p>
 <h3 id="GET和POST数据包类型转换"><a href="#GET和POST数据包类型转换" class="headerlink" title="GET和POST数据包类型转换"></a>GET和POST数据包类型转换</h3><p>使用<code>burpsuite</code>可以很方便的转换请求包的<code>GET</code>或者<code>POST</code>类型。<br>鼠标右键点击<code>change request method</code>即可转换请求包类型。<br><img src="https://s2.ax1x.com/2019/01/16/kSgmB6.png" alt="kSgmB6.png"></p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><code>burpsuite</code>还有很多其他牛逼的功能，比如：漏洞扫描检测，爬虫等，还可以通过添加编写插件实现各种功能例如：可以使用插件结合<code>SQLmap</code>进行自动化<code>sql注入</code>渗透测试、结合<code>phantom</code>检测XSS、结合<code>android killer</code>对安卓APP进行渗透测试等，在实际安全测试环境中应用广泛。更多技巧欢迎小伙伴们进群下载资料讨论交流<code>安恒萌新粉丝群：928102972</code>。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><code>burpsuite</code>还有很多其他牛逼的功能，比如：漏洞扫描检测，爬虫等，还可以通过添加编写插件实现各种功能例如：可以使用插件结合<code>SQLmap</code>进行自动化<code>sql注入</code>渗透测试、结合<code>phantom</code>检测XSS、结合<code>android killer</code>对安卓APP进行渗透测试等，在实际安全测试环境中应用广泛。更多技巧欢迎小伙伴们进群下载资料讨论交流<code>安恒萌新粉丝群：928102972</code>。<br>首发于<a href="https://mp.weixin.qq.com/s?__biz=MzU1MzE3Njg2Mw==&amp;mid=2247486089&amp;idx=1&amp;sn=7d49276949214bd1bd3148df10b0794d&amp;chksm=fbf790f9cc8019ef88620ca958f624fc2a4a4b27243e6d7ddf3d5f495db81ce885a4e7d98ef5&amp;token=2122934626&amp;lang=zh_CN#rd" target="_blank" rel="noopener">安恒网络空间安全讲武堂</a>公众号请大家多多关注！</p>
 
       
 
@@ -365,6 +365,15 @@ var _hmt = _hmt || [];
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/01/21/BinWalk安装和命令参数详解/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          BinWalk安装和命令参数详解
+        
+      </div>
+    </a>
   
   
     <a href="/2019/01/14/burpsuite-pro-v2.0beta破解版激活/" id="article-nav-older" class="article-nav-link-wrap">
@@ -548,55 +557,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">binwalk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">隐写</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">固件解包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">物联网安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能硬件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">固件安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">burpsuite</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">burpsuite pro-v2.0beta破解版</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装激活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -617,6 +590,62 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">burpsuite</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">burpsuite pro-v2.0beta破解版</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安装激活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">物联网安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">智能硬件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">固件安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">BurpSuite使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,6 +670,34 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件上传</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">winhex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ctf misc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">十六进制编辑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">修改软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -680,6 +737,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -700,26 +769,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">winhex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ctf misc</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">隐写</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">十六进制编辑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">修改软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数字取证</a>
               </li>
              
@@ -729,38 +778,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">misc</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">BurpSuite使用</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
               </li>
             
             <div class="clearfix"></div>
