@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>BinWalk安装和命令参数详解 | SpongeB0B&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言本周一安恒萌新粉丝群：928102972分享的工具为binwalk。Binwalk是一款快速、易用，用于分析，逆向工程和提取固件映像的工具。简单易用，完全自动化脚本，并通过自定义签名，提取规则和插件模块，还重要一点的是可以轻松地扩展。在CTF的MISC类题型和IOT安全的固件解包分析中广泛应用，可以大大提高效率。该工具对linux支持较好，对于windows功能支持较差，有条件的童鞋可以在li">
-<meta name="keywords" content="binwalk,隐写,固件解包">
+  <meta name="description" content="前言本周一安恒萌新粉丝群：928102972分享的工具为binwalk。Binwalk是一款快速、易用，用于分析，逆向工程和提取固件映像的工具。简单易用，完全自动化脚本，并通过自定义签名，提取规则和插件模块，还重要一点的是可以轻松地扩展。在CTF的MISC类题型和IOT安全的固件解包分析中广泛应用，可以大大提高效率。该工具对linux支持较好，对于windows功能支持较差，有条件的童鞋可以在l">
+<meta name="keywords" content="binwalk,隐写,固件解包,安装部署,文件提取,签名扫描,熵分析,可执行代码扫描,反汇编指令识别,暴力识别压缩数据流,命令参数详解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BinWalk安装和命令参数详解">
 <meta property="og:url" content="http://yoursite.com/2019/01/21/BinWalk安装和命令参数详解/index.html">
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
-<meta property="og:description" content="前言本周一安恒萌新粉丝群：928102972分享的工具为binwalk。Binwalk是一款快速、易用，用于分析，逆向工程和提取固件映像的工具。简单易用，完全自动化脚本，并通过自定义签名，提取规则和插件模块，还重要一点的是可以轻松地扩展。在CTF的MISC类题型和IOT安全的固件解包分析中广泛应用，可以大大提高效率。该工具对linux支持较好，对于windows功能支持较差，有条件的童鞋可以在li">
+<meta property="og:description" content="前言本周一安恒萌新粉丝群：928102972分享的工具为binwalk。Binwalk是一款快速、易用，用于分析，逆向工程和提取固件映像的工具。简单易用，完全自动化脚本，并通过自定义签名，提取规则和插件模块，还重要一点的是可以轻松地扩展。在CTF的MISC类题型和IOT安全的固件解包分析中广泛应用，可以大大提高效率。该工具对linux支持较好，对于windows功能支持较差，有条件的童鞋可以在l">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-23T11:57:19.257Z">
+<meta property="og:updated_time" content="2019-01-25T02:35:56.605Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BinWalk安装和命令参数详解">
-<meta name="twitter:description" content="前言本周一安恒萌新粉丝群：928102972分享的工具为binwalk。Binwalk是一款快速、易用，用于分析，逆向工程和提取固件映像的工具。简单易用，完全自动化脚本，并通过自定义签名，提取规则和插件模块，还重要一点的是可以轻松地扩展。在CTF的MISC类题型和IOT安全的固件解包分析中广泛应用，可以大大提高效率。该工具对linux支持较好，对于windows功能支持较差，有条件的童鞋可以在li">
+<meta name="twitter:description" content="前言本周一安恒萌新粉丝群：928102972分享的工具为binwalk。Binwalk是一款快速、易用，用于分析，逆向工程和提取固件映像的工具。简单易用，完全自动化脚本，并通过自定义签名，提取规则和插件模块，还重要一点的是可以轻松地扩展。在CTF的MISC类题型和IOT安全的固件解包分析中广泛应用，可以大大提高效率。该工具对linux支持较好，对于windows功能支持较差，有条件的童鞋可以在l">
   
     <link rel="alternative" href="/atom.xml" title="SpongeB0B&#39;s Blog" type="application/atom+xml">
   
@@ -198,7 +198,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本周一<code>安恒萌新粉丝群：928102972</code>分享的工具为<code>binwalk</code>。<br><code>Binwalk</code>是一款快速、易用，用于分析，逆向工程和提取固件映像的工具。简单易用，完全自动化脚本，并通过自定义签名，提取规则和插件模块，还重要一点的是可以轻松地扩展。<br>在CTF的MISC类题型和IOT安全的固件解包分析中广泛应用，可以大大提高效率。该工具对linux支持较好，对于windows功能支持较差，有条件的童鞋可以在linux上使用练习该神器。</p>
+        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1309865165&auto=1&height=66"></iframe></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本周一<code>安恒萌新粉丝群：928102972</code>分享的工具为<code>binwalk</code>。<br><code>Binwalk</code>是一款快速、易用，用于分析，逆向工程和提取固件映像的工具。简单易用，完全自动化脚本，并通过自定义签名，提取规则和插件模块，还重要一点的是可以轻松地扩展。<br>在CTF的MISC类题型和IOT安全的固件解包分析中广泛应用，可以大大提高效率。该工具对linux支持较好，对于windows功能支持较差，有条件的童鞋可以在linux上使用练习该神器。<br><a id="more"></a></p>
 <h1 id="BinWalk安装部署"><a href="#BinWalk安装部署" class="headerlink" title="BinWalk安装部署"></a>BinWalk安装部署</h1><p><code>binwalk</code>github项目：<a href="https://github.com/ReFirmLabs/binwalk" target="_blank" rel="noopener">https://github.com/ReFirmLabs/binwalk</a><br><code>binwalk</code>的wiki：<a href="https://github.com/devttys0/binwalk/wiki" target="_blank" rel="noopener">https://github.com/devttys0/binwalk/wiki</a><br><code>binwalk</code>是一款<code>python</code>编写的工具，目前<code>python2.x</code>和<code>python3.x</code>都较好的支持，不过在<code>Python3.x</code>中运行速度更快。在<code>kali</code>里面已经预装了，在其他发行版<code>linux</code>中安装也很简单，不过在<code>windows</code>上会稍微繁琐一些。<br><code>windows</code>下的安装和使用方法可以参考<code>pcat</code>大表哥的方法<a href="https://www.cnblogs.com/pcat/p/5256288.html" target="_blank" rel="noopener">https://www.cnblogs.com/pcat/p/5256288.html</a>。<br><code>wiki</code>上对于安装使用已经说的非常详细了。建议英文好的童鞋可以直接看官方的资料。网上资料也很多，这里就简单的翻译总结一下。<br>这里使用<code>kali linux</code>演示（基于Debian的linux发行版开发的一个渗透数字取证的系统）<br><strong>注意：</strong> 如果原来系统已经安装了旧版<code>binwalk</code>，这里建议先卸载再安装新版本，以防止出现不兼容和API冲突等问题。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo su //如果不是root账号建议先获取root权限，防止出现权限不足的问题</span><br><span class="line"><span class="meta">$</span> binwalk //直接运行查看已经安装binwalk的版本（最新版是v2.1.1,kali 2018里预载的是最新版，如果是1.0运行下面命令，否则可以直接跳过）和各参数的介绍</span><br><span class="line"><span class="meta">$</span> sudo apt-get remove binwalk //卸载binwalk</span><br><span class="line"><span class="meta">$</span> sudo apt-get update //更新软件列表</span><br><span class="line"><span class="meta">$</span> git clone https://github.com/ReFirmLabs/binwalk //获取binwalk源码</span><br><span class="line"><span class="meta">$</span> cd binwalk //进入binwalk文件夹</span><br><span class="line"><span class="meta">$</span> sudo python setup.py install //Binwalk遵循标准的Python安装过程</span><br><span class="line"><span class="meta">$</span> sudo apt-get install python-lzma //如果运行的是Python 2.x，强烈建议安装可选的Python lzma模块（但不是必需的），python3中已经包含</span><br></pre></td></tr></table></figure></p>
 <p>如果执行命令的中途出现了<code>无法获得锁 /var/lib/dpkg/lock - open (11: 资源暂时不可用) ubuntu 安装vim 及遇到的错误处理</code>，执行下面命令:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /var/cache/apt/archives/lock //如果是root账号可以去掉sudo</span><br><span class="line">sudo rm /var/lib/dpkg/lock</span><br></pre></td></tr></table></figure></p>
 <p><code>binwalk</code>还需要安装一些依赖项，具体的大家可以去<code>Wilk</code>上查看，如果是<code>Debian / Ubuntu</code>源代码里已经给了一键自动安装依赖项的脚本，运行命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo ./deps.sh //切换到binwalk目录下</span><br><span class="line">```  </span><br><span class="line"><span class="meta">#</span>## 安装IDA插件</span><br><span class="line">`binwalk`还可以安装`binwalk IDA`插件，这个功能对于做固件逆向的功能是非常方便的。安装：  </span><br><span class="line">```shell</span><br><span class="line"><span class="meta">$</span> python setup.py idainstall --idadir = / home / user / ida</span><br></pre></td></tr></table></figure></p>
@@ -307,6 +308,38 @@ var _hmt = _hmt || [];
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">固件解包</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安装部署</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">文件提取</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">签名扫描</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">熵分析</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">可执行代码扫描</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">反汇编指令识别</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">暴力识别压缩数据流</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">命令参数详解</a>
         		</li>
       		
 		</ul>
@@ -779,6 +812,38 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">misc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安装部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件提取</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">签名扫描</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">熵分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">可执行代码扫描</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">反汇编指令识别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">暴力识别压缩数据流</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">命令参数详解</a>
               </li>
             
             <div class="clearfix"></div>
