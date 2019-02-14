@@ -9,7 +9,7 @@
   <title>burpsuite使用简介 | SpongeB0B&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="上次讲解了burpsuite pro v2beta安装激活，现在就来介绍一下burpsuite的简单使用，这里只介绍一些在CTF常用的功能，对于渗透扫描等高级的功能童鞋们就自己看资料学习吧，目的是教会萌新小白简单使用抓包，爆破等功能。演示环境采用靶场，实际环境可能存在一些防护需自己灵活变通。">
-<meta name="keywords" content="BurpSuite使用,抓包,爆破,刷票,逻辑漏洞">
+<meta name="keywords" content="burpsuite,抓包,爆破,刷票,逻辑漏洞">
 <meta property="og:type" content="article">
 <meta property="og:title" content="burpsuite使用简介">
 <meta property="og:url" content="http://yoursite.com/2019/01/16/burpsuite使用简介/index.html">
@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/16/kSc4Xt.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/16/kScbtg.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/16/kSgmB6.png">
-<meta property="og:updated_time" content="2019-01-23T11:57:29.450Z">
+<meta property="og:updated_time" content="2019-02-14T03:45:29.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="burpsuite使用简介">
 <meta name="twitter:description" content="上次讲解了burpsuite pro v2beta安装激活，现在就来介绍一下burpsuite的简单使用，这里只介绍一些在CTF常用的功能，对于渗透扫描等高级的功能童鞋们就自己看资料学习吧，目的是教会萌新小白简单使用抓包，爆破等功能。演示环境采用靶场，实际环境可能存在一些防护需自己灵活变通。">
@@ -223,6 +223,9 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
+	  
+	  
+
         <p><video controls name="media"><source src="http://112.253.22.165/24/z/b/p/p/zbppreegjspbuetpmcirwtqvkovgkc/hd.yinyuetai.com/C9400165153FA517CA946E1FCD212194.mp4" type="video/mp4"></video><br>上次讲解了<code>burpsuite pro v2beta安装激活</code>，现在就来介绍一下burpsuite的简单使用，这里只介绍一些在CTF常用的功能，对于渗透扫描等高级的功能童鞋们就自己看资料学习吧，目的是教会萌新小白简单使用抓包，爆破等功能。演示环境采用靶场，实际环境可能存在一些防护需自己灵活变通。<br><a id="more"></a></p>
 <h1 id="抓包代理配置"><a href="#抓包代理配置" class="headerlink" title="抓包代理配置"></a>抓包代理配置</h1><h3 id="burpsuite代理设置"><a href="#burpsuite代理设置" class="headerlink" title="burpsuite代理设置"></a>burpsuite代理设置</h3><p><code>burpsuite</code>默认设置了代理<code>127.0.0.1:8080</code>如果端口冲突可以修改成其他的。<strong>注：</strong> 浏览器中配置代理时，端口必须<code>burpsuite</code>配置中的一样。<br><a href="https://imgchr.com/i/kS8whF" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/01/16/kS8whF.md.png" alt="kS8whF.md.png"></a></p>
 <h3 id="IE浏览器代理设置"><a href="#IE浏览器代理设置" class="headerlink" title="IE浏览器代理设置"></a>IE浏览器代理设置</h3><p>这里使用<code>Internet Explorer 11</code>为例，其他版本IE浏览器设置类似。<br>打开IE浏览器，在右上角<code>工具</code>中选择<code>Internet选项</code>，或者在菜单栏选择工具<code>Internet选项</code><br><img src="https://s2.ax1x.com/2019/01/16/kS12K1.png" alt="kS12K1.png"><br>选择<code>连接</code>–&gt;点击<code>局域网设置</code>，勾上<code>为LAN使用代理服务器前打勾</code>，ip输入<code>127.0.0.1</code>，端口输入<code>8080</code><br><img src="https://s2.ax1x.com/2019/01/16/kS8Qfg.png" alt="kS8Qfg.png"></p>
@@ -280,7 +283,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">BurpSuite使用</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">burpsuite</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -601,19 +604,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">foremost</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件恢复</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件分离</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">参数详解</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -633,23 +624,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">burpsuite pro-v2.0beta破解版</a>
+                <a href="javascript:void(0)" class="js-tag color2">burpsuite pro-v2.0破解版</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装激活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
+                <a href="javascript:void(0)" class="js-tag color3">破解版安装激活</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,19 +652,47 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">winhex</a>
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ctf misc</a>
+                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">十六进制编辑</a>
+                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">修改软件</a>
+                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">foremost</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件恢复</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件分离</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">参数详解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,30 +717,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">asp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">aspx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">一句话马</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -773,23 +756,51 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">BurpSuite使用</a>
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
+                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
+                <a href="javascript:void(0)" class="js-tag color2">winhex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
+                <a href="javascript:void(0)" class="js-tag color4">ctf misc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">十六进制编辑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">修改软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">asp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">aspx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">一句话马</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -805,18 +816,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数字取证</a>
               </li>
              
@@ -826,6 +825,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">misc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
               </li>
             
             <div class="clearfix"></div>
