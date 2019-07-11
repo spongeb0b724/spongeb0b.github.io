@@ -175,6 +175,184 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-安服攻防技术每日分享" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/11/安服攻防技术每日分享/">ATT&amp;CK技术每日分享集合</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/11/安服攻防技术每日分享/" class="archive-article-date">
+  	<time datetime="2019-07-11T08:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        【密】ATT&CK技术每日分享
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">内网渗透</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">漏洞挖掘</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/11/安服攻防技术每日分享/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-pwntools简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/pwntools简介/">pwn学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/06/pwntools简介/" class="archive-article-date">
+  	<time datetime="2019-03-06T05:40:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  
+	  
+
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本周安恒萌新粉丝分享的工具是<code>pwntools</code>，是一个二进制利用框架。<br><code>Pwntools</code>是一个CTF框架和漏洞利用开发库。它以<code>Python</code>编写，专为快速原型设计和开发而设计，旨在使漏洞利用编写尽可能简单。<code>pwntools</code>对64位的<code>Ubuntu 12.04</code>和<code>14.04</code>、<code>16.04</code>的支持最好，但是绝大多数的功能也支持<code>Debian</code>, <code>Arch</code>, <code>FreeBSD</code>, <code>OSX</code>, 等等。<br>官方文档提供了详细的api规范。这里也只是简单提一下<code>pwntools</code>使用方法，不会过于详细的讲解各种二进制漏洞攻击技术。具体安装和使用可以根据官方文档操作。<br>我也不是pwn手，业余学了一下还没入门，这里简单分享一下作为一个萌新角度的总结。如果有误请各位大佬斧正。<br>官方文档地址：<a href="http://docs.pwntools.com/en/stable/index.html" target="_blank" rel="noopener">http://docs.pwntools.com/en/stable/index.html</a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>Pwntools的主页在<a href="http://pwntools.com/" target="_blank" rel="noopener">pwntools.com</a>，Github项目地址为<a href="https://github.com/Gallopsled/pwntools" target="_blank" rel="noopener">https://github.com/Gallopsled/pwntools</a>，可以下载源码用<code>python</code>进行安装。也可以直接使用<code>pip install pwntools</code>进行安装。还有一些非python的外部库，需要手动下载。不过这时候需要主要pwntools的版本和库的版本是否一致，否则会出现一些版本冲突的问题。</p>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p>在以前的版本里都是通过使用<code>from pwn import *</code>导入使用，在2.0版本的时候，分为两个模块，<code>pwnlib</code>——纯净的python模块，以便快速学习入手使用;<code>pwn</code>——方便ctf选手在比赛中使用，其中包含很多子模块，利用通过<code>import pwn</code>或者<code>from pwn import *</code>。  </p>
+<p>大概框架可以根据官方的例程写exp：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">context(arch = &apos;i386&apos;, os = &apos;linux&apos;)</span><br><span class="line"></span><br><span class="line">r = remote(&apos;exploitme.example.com&apos;, 31337)</span><br><span class="line"># EXPLOIT CODE GOES HERE</span><br><span class="line">r.send(asm(shellcraft.sh()))</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure></p>
+<p>使用命令<code>from pwn import *</code>可以将所有的模块导入到当前<code>namespace</code>，还会导入os,sys等常用系统库。<br>使用命令<code>context(arch = &#39;i386&#39;, os = &#39;linux&#39;)</code>可以设置目标主机信息。<br>使用命令<code>r = remote(&#39;exploitme.example.com&#39;, 31337)</code>建立远程连接，参数：ip/url,端口。也可以命令<code>r = process(&quot;./example&quot;)</code>调试本地文件。<br>函数<code>asm(shellcraft.sh())</code>可以接受字符串作为参数，得到汇编码对应的机器码。<code>shellcraft</code>模块是<code>shellcode</code>的模块，包含一些生成<code>shellcode</code>的函数。<code>shellcraft.sh()</code>则是执行<code>/bin/sh</code>的<code>shellcode</code>了。<br>命令<code>r.send()</code>将<code>shellcode</code>发送到远程连接。<br>最后命令<code>r.interactive()</code>将控制权交给用户，这样可以使用打开shell。  </p>
+<p>常用的模块有：</p>
+<ul>
+<li>asm : 汇编与反汇编，支持x86/x64/arm/mips/powerpc等基本上所有的主流平台。</li>
+<li>dynelf : 用于远程符号泄漏，需要提供leak方法</li>
+<li>elf : 对elf文件进行操作</li>
+<li>gdb : 配合gdb进行调试</li>
+<li>memleak : 用于内存泄漏</li>
+<li>shellcraft : shellcode的生成器</li>
+<li>tubes : 包括tubes.sock, tubes.process, tubes.ssh, tubes.serialtube，分别适用于不同场景的PIPE</li>
+<li>utils : 一些实用的小功能，例如CRC计算，cyclic pattern等</li>
+<li>Tubes : 读写接口</li>
+<li>atexception : 未处理异常的回调</li>
+<li>constants : 访问头文件常量</li>
+<li>context ：设置运行时变量</li>
+<li>exception ：Pwnlib异常</li>
+<li>gdb ：使用GDB</li>
+<li>log ：日志</li>
+<li>replacements ：功能的替换</li>
+<li>rop : 可以用于构建堆栈的面向返回编程</li>
+<li>term ：终端处理</li>
+<li>config ：pwntools配置文件</li>
+<li>timeout ：超时处理</li>
+<li>timeout ：超时处理</li>
+<li>ui ：用户交互功能</li>
+<li>libcdb ：Libc数据库</li>
+<li>flag ：CTF flag 管理</li>
+<li>fmtstr ：格式化字符串漏洞利用</li>
+<li>protocols ：线路协议</li>
+<li>qemu- 结合QEMU虚拟机调试</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/06/pwntools简介/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-IDA-pro简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -898,174 +1076,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-IOT安全学习总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/02/IOT安全学习总结/">IOT安全学习总结</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/02/IOT安全学习总结/" class="archive-article-date">
-  	<time datetime="2019-01-02T08:03:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><video controls name="media"><source src="http://other.web.rp01.sycdn.kuwo.cn/resource/n2/35/40/4017239903.mp3" type="audio/mpeg"></video></p>
-<h1 id="前沿"><a href="#前沿" class="headerlink" title="前沿"></a>前沿</h1><p>因为我的专业是物联网。所以有一点点（真的只是一点，感觉都会一邪恶但是），前段时间空了也看会物联网安全相关的paper以及相关的漏洞分析（因为毕设做漏扫工具需要这块的poc）。所以抽空总结一下。如果写错或者不恰当的地方也请各位大佬斧正。<br>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">物联网安全</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">智能硬件</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">固件安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/02/IOT安全学习总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-凯文·米特尼克自传《欺骗的艺术》读后感" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/06/凯文·米特尼克自传《欺骗的艺术》读后感/">凯文·米特尼克自传《欺骗的艺术》读后感</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/06/凯文·米特尼克自传《欺骗的艺术》读后感/" class="archive-article-date">
-  	<time datetime="2018-12-06T03:23:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><video controls name="media"><source src="http://other.web.nc01.sycdn.kuwo.cn/resource/n1/5/84/2355807087.mp3" type="audio/mpeg"></video><br>行骗的艺术的分类有两种：  </p>
-<ul>
-<li>一种是通过诈骗，欺骗来获取利益，这就是通常的<code>骗子</code>。  </li>
-<li>另一种则通过蒙蔽、影响、劝导来达成获取信息的目的，这就是<code>社会工程师</code>。
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">社会工程学</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">凯文·米特尼克</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">欺骗的艺术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/06/凯文·米特尼克自传《欺骗的艺术》读后感/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1188,10 +1198,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">binwalk</a>
               </li>
              
@@ -1236,6 +1242,34 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">burpsuite</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">burpsuite pro-v2.0破解版</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">破解版安装激活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">IDA Pro 7.0</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">IDA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">逆向分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">物联网安全</a>
               </li>
              
@@ -1245,6 +1279,22 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">固件安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1284,15 +1334,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">IDA Pro 7.0</a>
+                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">IDA</a>
+                <a href="javascript:void(0)" class="js-tag color4">write up</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">逆向分析</a>
+                <a href="javascript:void(0)" class="js-tag color4">加解密</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文件上传</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1305,18 +1367,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">burpsuite</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">burpsuite pro-v2.0破解版</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">破解版安装激活</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1336,79 +1386,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">write up</a>
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">墨者学院</a>
+                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">在线靶场</a>
+                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注入</a>
+                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">代码审计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">取证分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">webshell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">上传漏洞</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">绕过</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">木马</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ctf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">加解密</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文件上传</a>
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1432,15 +1430,43 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
+                <a href="javascript:void(0)" class="js-tag color5">墨者学院</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+                <a href="javascript:void(0)" class="js-tag color5">在线靶场</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+                <a href="javascript:void(0)" class="js-tag color1">web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码审计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">取证分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">webshell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">上传漏洞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">绕过</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">木马</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CTF</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1456,23 +1482,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CTF</a>
+                <a href="javascript:void(0)" class="js-tag color5">内网渗透</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">漏洞挖掘</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
               </li>
             
             <div class="clearfix"></div>
