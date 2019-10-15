@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>IOT安全学习总结 | SpongeB0B&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前沿因为我的专业是物联网。所以有一点点（真的只是一点，感觉都会一邪恶但是），前段时间空了也看会物联网安全相关的paper以及相关的漏洞分析（因为毕设做漏扫工具需要这块的poc）。所以抽空总结一下。如果写错或者不恰当的地方也请各位大佬斧正。">
+  <meta name="description" content="前沿本科专业是物联网工程，在学校里也和同学参加过电赛相关项目，对嵌入式软件开发和PCB设计还算比较熟悉，RFID、高频通信也算是有点基础，不过更多的还是偏开发的。自从工作以后也很少有时间再接触这些内容，感觉有点生疏了。最近也在想未来的发展方向，IOT安全这两年越来越成熟了。如果说因为工作的事情抛掉了物联网这块的底子会很可惜，趁着现在还有一些记忆，一方面复习巩固一下物联网的基本技能，另一方面可以从">
 <meta name="keywords" content="物联网安全,智能硬件,固件安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IOT安全学习总结">
 <meta property="og:url" content="http://yoursite.com/2019/01/02/IOT安全学习总结/index.html">
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
-<meta property="og:description" content="前沿因为我的专业是物联网。所以有一点点（真的只是一点，感觉都会一邪恶但是），前段时间空了也看会物联网安全相关的paper以及相关的漏洞分析（因为毕设做漏扫工具需要这块的poc）。所以抽空总结一下。如果写错或者不恰当的地方也请各位大佬斧正。">
+<meta property="og:description" content="前沿本科专业是物联网工程，在学校里也和同学参加过电赛相关项目，对嵌入式软件开发和PCB设计还算比较熟悉，RFID、高频通信也算是有点基础，不过更多的还是偏开发的。自从工作以后也很少有时间再接触这些内容，感觉有点生疏了。最近也在想未来的发展方向，IOT安全这两年越来越成熟了。如果说因为工作的事情抛掉了物联网这块的底子会很可惜，趁着现在还有一些记忆，一方面复习巩固一下物联网的基本技能，另一方面可以从">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-17T02:24:07.952Z">
+<meta property="og:updated_time" content="2019-10-15T07:29:00.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IOT安全学习总结">
-<meta name="twitter:description" content="前沿因为我的专业是物联网。所以有一点点（真的只是一点，感觉都会一邪恶但是），前段时间空了也看会物联网安全相关的paper以及相关的漏洞分析（因为毕设做漏扫工具需要这块的poc）。所以抽空总结一下。如果写错或者不恰当的地方也请各位大佬斧正。">
+<meta name="twitter:description" content="前沿本科专业是物联网工程，在学校里也和同学参加过电赛相关项目，对嵌入式软件开发和PCB设计还算比较熟悉，RFID、高频通信也算是有点基础，不过更多的还是偏开发的。自从工作以后也很少有时间再接触这些内容，感觉有点生疏了。最近也在想未来的发展方向，IOT安全这两年越来越成熟了。如果说因为工作的事情抛掉了物联网这块的底子会很可惜，趁着现在还有一些记忆，一方面复习巩固一下物联网的基本技能，另一方面可以从">
   
     <link rel="alternative" href="/atom.xml" title="SpongeB0B&#39;s Blog" type="application/atom+xml">
   
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
 	  
 
         <p><video controls name="media"><source src="http://other.web.rp01.sycdn.kuwo.cn/resource/n2/35/40/4017239903.mp3" type="audio/mpeg"></video></p>
-<h1 id="前沿"><a href="#前沿" class="headerlink" title="前沿"></a>前沿</h1><p>因为我的专业是物联网。所以有一点点（真的只是一点，感觉都会一邪恶但是），前段时间空了也看会物联网安全相关的paper以及相关的漏洞分析（因为毕设做漏扫工具需要这块的poc）。所以抽空总结一下。如果写错或者不恰当的地方也请各位大佬斧正。<br><a id="more"></a></p>
+<h1 id="前沿"><a href="#前沿" class="headerlink" title="前沿"></a>前沿</h1><p>本科专业是物联网工程，在学校里也和同学参加过电赛相关项目，对嵌入式软件开发和PCB设计还算比较熟悉，RFID、高频通信也算是有点基础，不过更多的还是偏开发的。自从工作以后也很少有时间再接触这些内容，感觉有点生疏了。最近也在想未来的发展方向，IOT安全这两年越来越成熟了。如果说因为工作的事情抛掉了物联网这块的底子会很可惜，趁着现在还有一些记忆，一方面复习巩固一下物联网的基本技能，另一方面可以从攻击者角度去看待IOT也会有不一样的感悟。之前时间空了也看会物联网安全相关的paper以及相关的漏洞分析（因为毕设做漏扫工具需要这块的poc）。最近也忍痛花了几千大洋购置了几个研究设备。所以计划抽空更新总结，把自己学习和研究的一点心得写出来。如果有写错或者不恰当的地方也请各位大佬斧正。<br><a id="more"></a></p>
 <h1 id="什么是物联网安全"><a href="#什么是物联网安全" class="headerlink" title="什么是物联网安全"></a>什么是物联网安全</h1><p>近几年iot发展越来越快，但暴露出的安全问题也是层出不穷，相信在ipv6普及以后，物联网可能会井喷式发展，所以当下解决物联网安全问题也是网络安全中的一个重要话题。<br>物联网安全也是当下比较热门的领域，目前主要可以分为<code>智能硬件</code>（智能家居、智慧医疗、车载物联网等等）和<code>工业控制物联网</code>两大块。<br>物联网包含的知识也很多，需要学习<code>研究对象的通信协议</code>和<code>硬件电路分析</code>、<code>固件提取&amp;逆向工程&amp;代码植入</code>、还有一些<code>安全弱点</code>（传统安全问题在新领域的复制:大致包含<code>登录验证</code>，<code>弱口令</code>，<code>弱加密</code>，<code>溢出漏洞</code>，<code>固件更新漏洞</code>，<code>敏感信息泄露</code>，<code>不安全的访问控制</code>，<code>嵌入式系统遗留的漏洞</code>等等，也是目前体现比较多的问题）等。<br>以上的研究 <strong>前提:有钱</strong> ，只要接触到硬件相关的，没钱是不行的，随便买个仪器设备和研究的设备都要花大把的银子，设备可以试着申请一些厂商的众测。设备的话国产和进口的很多差了一个0不止，如果自己玩的话，国产就够用了，主要的差别是一些精度、频率上的问题，还有一些发热问题。</p>
 <h1 id="智能硬件安全"><a href="#智能硬件安全" class="headerlink" title="智能硬件安全"></a>智能硬件安全</h1><p>物联网设备通信模式可以分为：<code>云模式</code>、<code>网关模式</code>、<code>直连模式</code>。<br>对于智能设备，大多采用前两种，如果采用传统的安全检测方法，对上位机逆向，云服务器渗透，通信抓包等方法能获取到部分信息，如果需要深入研究设备底层的工作原理，挖掘更深层次的漏洞，就必需接触硬件本身，下面简单介绍一些电路分析和芯片固件提取和调试。</p>
 <h1 id="推荐资料"><a href="#推荐资料" class="headerlink" title="推荐资料"></a>推荐资料</h1><p>《智能硬件安全》<br>《揭秘家用物联网0day漏洞挖掘技术》<br><a href="https://iotsecuritywiki.com/" target="_blank" rel="noopener">物联网安全wiki</a><br><a href="https://www.attify.com/" target="_blank" rel="noopener">attify website</a><br><a href="https://iot-security.wiki/basics/iot.html" target="_blank" rel="noopener">伏宸安全实验室</a><br><a href="https://www.shodan.io/" target="_blank" rel="noopener">shodan</a><br><a href="https://www.zoomeye.org/" target="_blank" rel="noopener">zoomeye</a><br><a href="https://github.com/BastilleResearch/killerbee" target="_blank" rel="noopener">ZigBee（无线通信）安全研究工具包</a><br><a href="https://github.com/samratashok/Kautilya" target="_blank" rel="noopener">Kautilya - 易于使用人机接口设备进行攻击性安全和渗透测试的工具</a></p>
@@ -528,6 +528,22 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">物联网安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">智能硬件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">固件安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">binwalk</a>
               </li>
              
@@ -572,6 +588,26 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">burpsuite</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">IDA Pro 7.0</a>
               </li>
              
@@ -584,23 +620,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">物联网安全</a>
+                <a href="javascript:void(0)" class="js-tag color4">pwn</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能硬件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">固件安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">burpsuite</a>
+                <a href="javascript:void(0)" class="js-tag color4">pwntools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -632,19 +656,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
+                <a href="javascript:void(0)" class="js-tag color5">密码修改</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
+                <a href="javascript:void(0)" class="js-tag color1">账户名修改</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,6 +681,74 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">参数详解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CTF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码审计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">asp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">aspx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">一句话马</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -688,47 +776,35 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pwn</a>
+                <a href="javascript:void(0)" class="js-tag color5">数字取证</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pwntools</a>
+                <a href="javascript:void(0)" class="js-tag color3">密码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color5">misc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安装</a>
+                <a href="javascript:void(0)" class="js-tag color2">winhex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
+                <a href="javascript:void(0)" class="js-tag color4">ctf misc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color2">十六进制编辑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">密码修改</a>
+                <a href="javascript:void(0)" class="js-tag color5">修改软件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">账户名修改</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
+                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -737,14 +813,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">在线靶场</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">代码审计</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -765,74 +833,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">木马</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">winhex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ctf misc</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">十六进制编辑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">修改软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CTF</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">asp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">aspx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">一句话马</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数字取证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">密码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">misc</a>
               </li>
             
             <div class="clearfix"></div>
