@@ -15,13 +15,12 @@
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
 <meta property="og:description" content="前言最近配置自己的工具机过程中踩了一些坑，想想不如趁这个机会总结一下，所以开了此贴作为记录，之后也会一直不定期更新。其实网上也有很多大佬构建了较为完整的工具机。但是我觉得很多东西只有自己踩过坑才会有感悟，自己配的东西用起来也会爽一点，造轮子有时候也是一种收获和成就感。千万不能习惯做一个伸手党。(ps:这些内容以前很多也做过，只不过没有写博客的习惯，很多东西时间长都忘了，博客可以更好的去回忆自己踩过">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/10/11/1vVMCFoLlzYwB5T.png">
-<meta property="og:image" content="https://i.loli.net/2019/10/11/9OJrmvcPQXAdjSz.png">
-<meta property="og:updated_time" content="2019-10-15T07:36:20.856Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/17/oCphr2VaREuB8tZ.png">
+<meta property="og:updated_time" content="2019-10-17T09:09:04.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kali环境配置以及工具安装">
 <meta name="twitter:description" content="前言最近配置自己的工具机过程中踩了一些坑，想想不如趁这个机会总结一下，所以开了此贴作为记录，之后也会一直不定期更新。其实网上也有很多大佬构建了较为完整的工具机。但是我觉得很多东西只有自己踩过坑才会有感悟，自己配的东西用起来也会爽一点，造轮子有时候也是一种收获和成就感。千万不能习惯做一个伸手党。(ps:这些内容以前很多也做过，只不过没有写博客的习惯，很多东西时间长都忘了，博客可以更好的去回忆自己踩过">
-<meta name="twitter:image" content="https://i.loli.net/2019/10/11/1vVMCFoLlzYwB5T.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/10/17/oCphr2VaREuB8tZ.png">
   
     <link rel="alternative" href="/atom.xml" title="SpongeB0B&#39;s Blog" type="application/atom+xml">
   
@@ -204,8 +203,12 @@ var _hmt = _hmt || [];
 	  
 
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近配置自己的工具机过程中踩了一些坑，想想不如趁这个机会总结一下，所以开了此贴作为记录，之后也会一直不定期更新。其实网上也有很多大佬构建了较为完整的工具机。但是我觉得很多东西只有自己踩过坑才会有感悟，自己配的东西用起来也会爽一点，造轮子有时候也是一种收获和成就感。千万不能习惯做一个伸手党。(ps:这些内容以前很多也做过，只不过没有写博客的习惯，很多东西时间长都忘了，博客可以更好的去回忆自己踩过的坑，避免再一次遇到，日积月累以后会感谢善于记录的自己)<br><a id="more"></a></p>
-<h1 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h1><h1 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h1><h3 id="查看系统版本"><a href="#查看系统版本" class="headerlink" title="查看系统版本"></a>查看系统版本</h3><p><code>lsb_release -a</code><br><img src="https://i.loli.net/2019/10/11/1vVMCFoLlzYwB5T.png" alt="查看系统版本"></p>
-<h3 id="查看内核版本"><a href="#查看内核版本" class="headerlink" title="查看内核版本"></a>查看内核版本</h3><p><code>uname -r</code><br><img src="https://i.loli.net/2019/10/11/9OJrmvcPQXAdjSz.png" alt="查看内核版本"></p>
+<h1 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h1><h1 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h1><h3 id="查看操作系统信息"><a href="#查看操作系统信息" class="headerlink" title="查看操作系统信息"></a>查看操作系统信息</h3><p><img src="https://i.loli.net/2019/10/17/oCphr2VaREuB8tZ.png" alt="查看系统信息"></p>
+<h5 id="查看系统版本"><a href="#查看系统版本" class="headerlink" title="查看系统版本"></a>查看系统版本</h5><p><code>lsb_release -a</code></p>
+<h5 id="查看内核版本"><a href="#查看内核版本" class="headerlink" title="查看内核版本"></a>查看内核版本</h5><p><code>uname -r</code></p>
+<h5 id="查看内核名字"><a href="#查看内核名字" class="headerlink" title="查看内核名字"></a>查看内核名字</h5><p><code>uname -s</code></p>
+<h5 id="查看系统是32位还是64位"><a href="#查看系统是32位还是64位" class="headerlink" title="查看系统是32位还是64位"></a>查看系统是32位还是64位</h5><p><code>uname -m</code></p>
+<h5 id="查看网络主机名"><a href="#查看网络主机名" class="headerlink" title="查看网络主机名"></a>查看网络主机名</h5><p><code>uname -n</code></p>
 <h1 id="工具安装"><a href="#工具安装" class="headerlink" title="工具安装"></a>工具安装</h1><h3 id="kali安装firmware-mod-kit-FMK"><a href="#kali安装firmware-mod-kit-FMK" class="headerlink" title="kali安装firmware-mod-kit(FMK)"></a>kali安装firmware-mod-kit(FMK)</h3><p>在这也踩了些坑，网上大部分教程都是Ubuntu的，如果直接采用GitHub那个fmk的版本去编译的时候会报错，后来找了很多解决办法，最后发现kali其实是有适配的fmk的安装包–<a href="http://pkg.kali.org/pkg/firmware-mod-kit" target="_blank" rel="noopener">kali各版firmware-mod-kit首页</a><br>安装步骤<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>源码在https://gitlab.com/kalilinux/packages/firmware-mod-kit</span><br><span class="line">git clone https://gitlab.com/kalilinux/packages/firmware-mod-kit.git</span><br><span class="line"><span class="meta">#</span>进入fmk源码</span><br><span class="line">cd firmware-mod-kit/src</span><br><span class="line"><span class="meta">#</span>执行配置文件生成makefile文件，并make编译生成可执行文件</span><br><span class="line">./configure &amp;&amp; make</span><br></pre></td></tr></table></figure></p>
 <p>如果安装遇到问题，也可以在<a href="http://http.kali.org/pool/main/f/firmware-mod-kit/" target="_blank" rel="noopener">kali各版本firmware-mod-kit安装包</a>下载对应自己kali版本的包<br>一般对固件逆向分析时，先用binwalk提取，再用<code>unsquashfs_all.sh</code>解包提取出来的squashfs文件(不过在用Ubuntu14.04的环境，直接binwalk提取就全出来了，省去了解包squashfs文件的步骤，很迷喔~~)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">binwalk -eM firmware.bin</span><br><span class="line"><span class="meta">#</span>脚本+squashfs文件+解包后存放的路径</span><br><span class="line">./unsquashfs_all.sh '/_firmware_.bin.extracted/120200.squashfs' '/squashfs-root'</span><br><span class="line"><span class="meta">#</span>如果不知道sh文件的参数，可以直接运行一下./xxx.sh看看usage</span><br></pre></td></tr></table></figure></p>
 <p>上面用到的固件<a href="https://pan.baidu.com/s/1BcSGkrwG7WqPSIMp8V4xWA" target="_blank" rel="noopener">firmware.bin</a><br>推荐一个国外大佬搭建做IOT安全的环境的虚拟机<a href="https://pan.baidu.com/s/1Py9RFQ1OC2c8qSwO9BQS5w" target="_blank" rel="noopener">AttifyOs-v2.0</a><br>也可以看<a href="https://code.google.com/archive/p/firmware-mod-kit/wikis/Documentation.wiki" target="_blank" rel="noopener">firmware-mod-kit官方文档</a><br>还有其他很多脚本的详细功能和使用，之后会另开一篇文章，拿着实例讲解。</p>
@@ -312,6 +315,15 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/2019/10/15/恶意代码原理与分析基础/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          恶意代码原理与分析基础
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/08/30/ubuntu-16-04修改用户名密码/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">ubuntu 16.04修改用户名密码&amp;忘了密码如何进系统</div>
@@ -341,7 +353,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#系统配置"><span class="toc-number">2.</span> <span class="toc-text">系统配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见命令"><span class="toc-number">3.</span> <span class="toc-text">常见命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看系统版本"><span class="toc-number">3.0.1.</span> <span class="toc-text">查看系统版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看内核版本"><span class="toc-number">3.0.2.</span> <span class="toc-text">查看内核版本</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#工具安装"><span class="toc-number">4.</span> <span class="toc-text">工具安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#kali安装firmware-mod-kit-FMK"><span class="toc-number">4.0.1.</span> <span class="toc-text">kali安装firmware-mod-kit(FMK)</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#系统配置"><span class="toc-number">2.</span> <span class="toc-text">系统配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见命令"><span class="toc-number">3.</span> <span class="toc-text">常见命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看操作系统信息"><span class="toc-number">3.0.1.</span> <span class="toc-text">查看操作系统信息</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看系统版本"><span class="toc-number">3.0.1.0.1.</span> <span class="toc-text">查看系统版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看内核版本"><span class="toc-number">3.0.1.0.2.</span> <span class="toc-text">查看内核版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看内核名字"><span class="toc-number">3.0.1.0.3.</span> <span class="toc-text">查看内核名字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看系统是32位还是64位"><span class="toc-number">3.0.1.0.4.</span> <span class="toc-text">查看系统是32位还是64位</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看网络主机名"><span class="toc-number">3.0.1.0.5.</span> <span class="toc-text">查看网络主机名</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#工具安装"><span class="toc-number">4.</span> <span class="toc-text">工具安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#kali安装firmware-mod-kit-FMK"><span class="toc-number">4.0.1.</span> <span class="toc-text">kali安装firmware-mod-kit(FMK)</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -503,6 +515,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">binwalk</a>
               </li>
              
@@ -547,30 +563,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">容器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">镜像</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">IDA Pro 7.0</a>
               </li>
              
@@ -580,18 +572,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">逆向分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">物联网安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能硬件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">固件安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,6 +592,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">物联网安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">智能硬件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">固件安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -639,11 +631,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pwn</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pwntools</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">容器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">镜像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -683,6 +687,38 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pwn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pwntools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">strings</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UPX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">恶意软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">winhex</a>
               </li>
              
@@ -699,79 +735,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">密码修改</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">账户名修改</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">墨者学院</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">在线靶场</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">代码审计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">取证分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">webshell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">上传漏洞</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">绕过</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">木马</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CTF</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -795,7 +759,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">密码修改</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">账户名修改</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -808,6 +780,58 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">misc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CTF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">代码审计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">墨者学院</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">在线靶场</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">取证分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">webshell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">上传漏洞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">绕过</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">木马</a>
               </li>
             
             <div class="clearfix"></div>
