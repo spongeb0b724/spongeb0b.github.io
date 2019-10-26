@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>恶意代码原理与分析基础 | SpongeB0B&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言预备知识反病毒软件一般由扫描器、病毒库和虚拟机组成，并由主程序将它们整合为一体  扫描器用于查杀病毒，是反病毒软件的核心。描器的技术与算法是否先进对反病毒软件的效果有直接的影响。 病毒库存储着恶意软件的特征码，病毒库的存储形式决定了扫描器的扫描方式。 虚拟机与现实的CPU、硬盘等物理设备完全隔离，更加深入的检测文件的安全性。常见的基于文件扫描技术 基于文件扫描  第一代扫描技术 字符串扫描技术">
+  <meta name="description" content="前言前几天正好在学习免杀，这两天工作上的需要，要做恶意代码分析，所以就简单的学了一下，入了个门，发现还是非常有趣的，这篇博客主要是对学习过程中一些概念知识点的总结和整理，也方便以后自己复习和回忆，之后还会深入探究，其实已经也了很多课程实验，由于内容是作为公司收费课程的，那部分就不放上来了，但是会持续更新，写一个系统全面的总结，也会掺杂自己的一些理解去解释，如果解释有误也欢迎大家在下方评论留言，共同">
 <meta name="keywords" content="strings,UPX,恶意软件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="恶意代码原理与分析基础">
 <meta property="og:url" content="http://yoursite.com/2019/10/15/恶意代码原理与分析基础/index.html">
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
-<meta property="og:description" content="前言预备知识反病毒软件一般由扫描器、病毒库和虚拟机组成，并由主程序将它们整合为一体  扫描器用于查杀病毒，是反病毒软件的核心。描器的技术与算法是否先进对反病毒软件的效果有直接的影响。 病毒库存储着恶意软件的特征码，病毒库的存储形式决定了扫描器的扫描方式。 虚拟机与现实的CPU、硬盘等物理设备完全隔离，更加深入的检测文件的安全性。常见的基于文件扫描技术 基于文件扫描  第一代扫描技术 字符串扫描技术">
+<meta property="og:description" content="前言前几天正好在学习免杀，这两天工作上的需要，要做恶意代码分析，所以就简单的学了一下，入了个门，发现还是非常有趣的，这篇博客主要是对学习过程中一些概念知识点的总结和整理，也方便以后自己复习和回忆，之后还会深入探究，其实已经也了很多课程实验，由于内容是作为公司收费课程的，那部分就不放上来了，但是会持续更新，写一个系统全面的总结，也会掺杂自己的一些理解去解释，如果解释有误也欢迎大家在下方评论留言，共同">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/10/15/am2rqV7Bp45eMG9.png">
-<meta property="og:updated_time" content="2019-10-17T03:15:19.515Z">
+<meta property="og:updated_time" content="2019-10-26T01:27:16.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="恶意代码原理与分析基础">
-<meta name="twitter:description" content="前言预备知识反病毒软件一般由扫描器、病毒库和虚拟机组成，并由主程序将它们整合为一体  扫描器用于查杀病毒，是反病毒软件的核心。描器的技术与算法是否先进对反病毒软件的效果有直接的影响。 病毒库存储着恶意软件的特征码，病毒库的存储形式决定了扫描器的扫描方式。 虚拟机与现实的CPU、硬盘等物理设备完全隔离，更加深入的检测文件的安全性。常见的基于文件扫描技术 基于文件扫描  第一代扫描技术 字符串扫描技术">
+<meta name="twitter:description" content="前言前几天正好在学习免杀，这两天工作上的需要，要做恶意代码分析，所以就简单的学了一下，入了个门，发现还是非常有趣的，这篇博客主要是对学习过程中一些概念知识点的总结和整理，也方便以后自己复习和回忆，之后还会深入探究，其实已经也了很多课程实验，由于内容是作为公司收费课程的，那部分就不放上来了，但是会持续更新，写一个系统全面的总结，也会掺杂自己的一些理解去解释，如果解释有误也欢迎大家在下方评论留言，共同">
 <meta name="twitter:image" content="https://i.loli.net/2019/10/15/am2rqV7Bp45eMG9.png">
   
     <link rel="alternative" href="/atom.xml" title="SpongeB0B&#39;s Blog" type="application/atom+xml">
@@ -203,7 +203,8 @@ var _hmt = _hmt || [];
 	  
 	  
 
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><p>反病毒软件一般由扫描器、病毒库和虚拟机组成，并由主程序将它们整合为一体<br><img src="https://i.loli.net/2019/10/15/am2rqV7Bp45eMG9.png" alt="反病毒软件组成"></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前几天正好在学习免杀，这两天工作上的需要，要做恶意代码分析，所以就简单的学了一下，入了个门，发现还是非常有趣的，这篇博客主要是对学习过程中一些概念知识点的总结和整理，也方便以后自己复习和回忆，之后还会深入探究，其实已经也了很多课程实验，由于内容是作为公司收费课程的，那部分就不放上来了，但是会持续更新，写一个系统全面的总结，也会掺杂自己的一些理解去解释，如果解释有误也欢迎大家在下方评论留言，共同学习成长！<br><a id="more"></a></p>
+<h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><p>反病毒软件一般由扫描器、病毒库和虚拟机组成，并由主程序将它们整合为一体<br><img src="https://i.loli.net/2019/10/15/am2rqV7Bp45eMG9.png" alt="反病毒软件组成"></p>
 <ul>
 <li>扫描器用于查杀病毒，是反病毒软件的核心。描器的技术与算法是否先进对反病毒软件的效果有直接的影响。</li>
 <li>病毒库存储着恶意软件的<code>特征码</code>，病毒库的存储形式决定了扫描器的扫描方式。</li>
@@ -567,10 +568,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">binwalk</a>
               </li>
              
@@ -627,6 +624,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">burpsuite</a>
               </li>
              
@@ -644,6 +645,26 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">容器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">镜像</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -675,34 +696,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">burpsuite pro-v2.0破解版</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">破解版安装激活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">容器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">镜像</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ctf</a>
               </li>
              
@@ -727,15 +720,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color2">burpsuite pro-v2.0破解版</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
+                <a href="javascript:void(0)" class="js-tag color3">破解版安装激活</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,27 +736,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
+                <a href="javascript:void(0)" class="js-tag color5">密码修改</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
+                <a href="javascript:void(0)" class="js-tag color1">账户名修改</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">strings</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UPX</a>
+                <a href="javascript:void(0)" class="js-tag color3">安装</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">恶意软件</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -787,7 +776,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -811,31 +808,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color5">墨者学院</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">密码修改</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">账户名修改</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数字取证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">密码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">misc</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CTF</a>
+                <a href="javascript:void(0)" class="js-tag color5">在线靶场</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -844,26 +821,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">代码审计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">墨者学院</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">在线靶场</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -884,6 +841,50 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">木马</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CTF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数字取证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">密码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">misc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">strings</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UPX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">恶意软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
               </li>
             
             <div class="clearfix"></div>
