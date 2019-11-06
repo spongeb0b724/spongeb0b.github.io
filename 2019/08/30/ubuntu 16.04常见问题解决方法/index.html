@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ubuntu 16.04修改用户名密码&amp;忘了密码如何进系统 | SpongeB0B&#39;s Blog</title>
+  <title>ubuntu 16.04常见问题解决方法 | SpongeB0B&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言之前搞了一个pwn的环境，系统是Ubuntu 16.04，突然想改改之前用户名，感觉以前的用户名好沙雕，然后在搞的过程中也遇到了一些坑，写个简单教程记录一下，以后万一又想改了呢~~注意： 在虚拟机环境下有条件的一定也保存快照，防止出现什么不可逆的操作，比如手贱输入了rm -rf/可肿么办。">
 <meta name="keywords" content="Ubuntu,修改密码,修改账户名">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu 16.04修改用户名密码&amp;忘了密码如何进系统">
-<meta property="og:url" content="http://yoursite.com/2019/08/30/ubuntu-16-04修改用户名密码/index.html">
+<meta property="og:title" content="ubuntu 16.04常见问题解决方法">
+<meta property="og:url" content="http://yoursite.com/2019/08/30/ubuntu 16.04常见问题解决方法/index.html">
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
 <meta property="og:description" content="前言之前搞了一个pwn的环境，系统是Ubuntu 16.04，突然想改改之前用户名，感觉以前的用户名好沙雕，然后在搞的过程中也遇到了一些坑，写个简单教程记录一下，以后万一又想改了呢~~注意： 在虚拟机环境下有条件的一定也保存快照，防止出现什么不可逆的操作，比如手贱输入了rm -rf/可肿么办。">
 <meta property="og:locale" content="zh-Hans">
@@ -24,9 +24,9 @@
 <meta property="og:image" content="https://i.loli.net/2019/08/30/Awud2vJV9KUT71F.png">
 <meta property="og:image" content="https://i.loli.net/2019/08/30/x5UrjXR39GhJNzm.png">
 <meta property="og:image" content="https://i.loli.net/2019/08/30/GIsAQUdRXF4ZMOK.png">
-<meta property="og:updated_time" content="2019-10-30T08:30:39.193Z">
+<meta property="og:updated_time" content="2019-11-06T08:43:08.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu 16.04修改用户名密码&amp;忘了密码如何进系统">
+<meta name="twitter:title" content="ubuntu 16.04常见问题解决方法">
 <meta name="twitter:description" content="前言之前搞了一个pwn的环境，系统是Ubuntu 16.04，突然想改改之前用户名，感觉以前的用户名好沙雕，然后在搞的过程中也遇到了一些坑，写个简单教程记录一下，以后万一又想改了呢~~注意： 在虚拟机环境下有条件的一定也保存快照，防止出现什么不可逆的操作，比如手贱输入了rm -rf/可肿么办。">
 <meta name="twitter:image" content="https://i.loli.net/2019/09/09/YuxKa8rNJpA5T9c.jpg">
   
@@ -187,19 +187,19 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ubuntu-16-04修改用户名密码" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ubuntu 16.04常见问题解决方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ubuntu 16.04修改用户名密码&amp;忘了密码如何进系统
+      ubuntu 16.04常见问题解决方法
     </h1>
   
 
         
-        <a href="/2019/08/30/ubuntu-16-04修改用户名密码/" class="archive-article-date">
+        <a href="/2019/08/30/ubuntu 16.04常见问题解决方法/" class="archive-article-date">
   	<time datetime="2019-08-30T01:55:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
 </a>
         
@@ -225,8 +225,11 @@ var _hmt = _hmt || [];
 <li>在此行末尾加上<code>quiet splash rw init=/bin/bash</code>。并摁<code>F10</code>或者<code>ctrl+x</code>键，进入命令行界面。<br><img src="https://i.loli.net/2019/08/30/x5UrjXR39GhJNzm.png" alt="5.png">  </li>
 <li>可以先试着读一下密码文件<code>cat /etc/shadow</code></li>
 <li>如果输入<code>passwd username</code>(username是要修改密码的用户名，如果不加用户名则默认修改当前的用户账号，即<code>root</code>账户，需要注意，一般Ubuntu默认是不开启root登录的)<br><img src="https://i.loli.net/2019/08/30/GIsAQUdRXF4ZMOK.png" alt="6.png">  </li>
-<li>这样输入新密码就完成了，接下来直接在电源里重启就可以进系统了，网上说的什么<code>reboot</code>和<code>shutdown</code>都没用</li>
+<li>这样输入新密码就完成了，接下来直接在电源里重启就可以进系统了，网上说的什么<code>reboot</code>和<code>shutdown</code>都没用<h3 id="apt相关问题"><a href="#apt相关问题" class="headerlink" title="apt相关问题"></a>apt相关问题</h3><h4 id="无法获取锁"><a href="#无法获取锁" class="headerlink" title="无法获取锁"></a>无法获取锁</h4><h6 id="报错信息："><a href="#报错信息：" class="headerlink" title="报错信息："></a>报错信息：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)</span><br><span class="line">E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<h6 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h6><p>另一个程序正在运行，占用了锁，可能是由于之前下载未完成或者系统自动更新导致的。</p>
+<h6 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h6><p>网上有些说kill那个进程，这个方法我试了一下，是可以的，不过比较麻烦，最简单的就是使用下面两条命令删除锁文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /var/lib/dpkg/lock-frontend</span><br><span class="line">sudo rm /var/lib/dpkg/lock</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -335,7 +338,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/30/ubuntu-16-04修改用户名密码/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/30/ubuntu 16.04常见问题解决方法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -387,7 +390,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改账号名称"><span class="toc-number">2.</span> <span class="toc-text">修改账号名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改密码"><span class="toc-number">3.</span> <span class="toc-text">修改密码</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改账号名称"><span class="toc-number">2.</span> <span class="toc-text">修改账号名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改密码"><span class="toc-number">3.</span> <span class="toc-text">修改密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apt相关问题"><span class="toc-number">4.</span> <span class="toc-text">apt相关问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#无法获取锁"><span class="toc-number">4.1.</span> <span class="toc-text">无法获取锁</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#报错信息："><span class="toc-number">4.1.0.1.</span> <span class="toc-text">报错信息：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#报错原因"><span class="toc-number">4.1.0.2.</span> <span class="toc-text">报错原因</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#解决方法"><span class="toc-number">4.1.0.3.</span> <span class="toc-text">解决方法</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -412,7 +415,7 @@ var _hmt = _hmt || [];
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2019/08/30/ubuntu-16-04修改用户名密码/",
+  id: "http://yoursite.com/2019/08/30/ubuntu 16.04常见问题解决方法/",
   owner: 'yehongning',
   repo: 'yehongning.github.io',
   oauth: {
@@ -597,19 +600,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">科普</a>
+                <a href="javascript:void(0)" class="js-tag color2">IDA Pro 7.0</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IT知识</a>
+                <a href="javascript:void(0)" class="js-tag color4">IDA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安装系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">电脑硬件</a>
+                <a href="javascript:void(0)" class="js-tag color5">逆向分析</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -625,15 +624,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">IDA Pro 7.0</a>
+                <a href="javascript:void(0)" class="js-tag color3">科普</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">IDA</a>
+                <a href="javascript:void(0)" class="js-tag color5">IT知识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">逆向分析</a>
+                <a href="javascript:void(0)" class="js-tag color5">安装系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">电脑硬件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -701,6 +704,30 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">修改密码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">修改账户名</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ctf</a>
               </li>
              
@@ -725,62 +752,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pwn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pwntools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">修改密码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">修改账户名</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">winhex</a>
               </li>
              
@@ -794,6 +765,26 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">修改软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">asp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">aspx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">一句话马</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -833,15 +824,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">strings</a>
+                <a href="javascript:void(0)" class="js-tag color4">pwn</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UPX</a>
+                <a href="javascript:void(0)" class="js-tag color4">pwntools</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">恶意软件</a>
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -849,23 +848,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">asp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">aspx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">一句话马</a>
+                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -881,7 +864,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
+                <a href="javascript:void(0)" class="js-tag color3">strings</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UPX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">恶意软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
               </li>
             
             <div class="clearfix"></div>
