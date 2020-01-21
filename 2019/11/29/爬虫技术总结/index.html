@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>恶意代码原理与分析基础 | SpongeB0B&#39;s Blog</title>
+  <title>【密】爬虫技术总结 | SpongeB0B&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言前几天正好在学习免杀，这两天工作上的需要，要做恶意代码分析，所以就简单的学了一下，入了个门，发现还是非常有趣的，这篇博客主要是对学习过程中一些概念知识点的总结和整理，也方便以后自己复习和回忆，之后还会深入探究，其实已经也了很多课程实验，由于内容是作为公司收费课程的，那部分就不放上来了，但是会持续更新，写一个系统全面的总结，也会掺杂自己的一些理解去解释，如果解释有误也欢迎大家在下方评论留言，共同">
-<meta name="keywords" content="strings,UPX,恶意软件">
+  <meta name="description" content="前言前几天出了《网络安全漏洞管理规定（征求意见稿》搞的表哥们都很慌，有些大佬准备封站删博客保平安了。具体的大家可以去看看里面的新规，以后像我这种菜鸡更难白嫖一些免费教程了。我发现很多安全群里都在搞爬博客爬公众号爬星球。有些站都爬瘫了。正好总结一下平时常用的一些工具和方法（一些热门网站资源扒取的技巧），这里只是总结探讨爬虫技术。千万不要去爬用户数据隐私等，否则后果自负。已经有好些人被抓了（51信用卡">
+<meta name="keywords" content="wget,爬虫,youtube-dl,B站">
 <meta property="og:type" content="article">
-<meta property="og:title" content="恶意代码原理与分析基础">
-<meta property="og:url" content="http://yoursite.com/2019/10/15/恶意代码原理与分析基础/index.html">
+<meta property="og:title" content="【密】爬虫技术总结">
+<meta property="og:url" content="http://yoursite.com/2019/11/29/爬虫技术总结/index.html">
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
-<meta property="og:description" content="前言前几天正好在学习免杀，这两天工作上的需要，要做恶意代码分析，所以就简单的学了一下，入了个门，发现还是非常有趣的，这篇博客主要是对学习过程中一些概念知识点的总结和整理，也方便以后自己复习和回忆，之后还会深入探究，其实已经也了很多课程实验，由于内容是作为公司收费课程的，那部分就不放上来了，但是会持续更新，写一个系统全面的总结，也会掺杂自己的一些理解去解释，如果解释有误也欢迎大家在下方评论留言，共同">
+<meta property="og:description" content="前言前几天出了《网络安全漏洞管理规定（征求意见稿》搞的表哥们都很慌，有些大佬准备封站删博客保平安了。具体的大家可以去看看里面的新规，以后像我这种菜鸡更难白嫖一些免费教程了。我发现很多安全群里都在搞爬博客爬公众号爬星球。有些站都爬瘫了。正好总结一下平时常用的一些工具和方法（一些热门网站资源扒取的技巧），这里只是总结探讨爬虫技术。千万不要去爬用户数据隐私等，否则后果自负。已经有好些人被抓了（51信用卡">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/10/15/am2rqV7Bp45eMG9.png">
-<meta property="og:updated_time" content="2019-10-26T01:27:16.917Z">
+<meta property="og:updated_time" content="2020-01-21T06:28:33.623Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="恶意代码原理与分析基础">
-<meta name="twitter:description" content="前言前几天正好在学习免杀，这两天工作上的需要，要做恶意代码分析，所以就简单的学了一下，入了个门，发现还是非常有趣的，这篇博客主要是对学习过程中一些概念知识点的总结和整理，也方便以后自己复习和回忆，之后还会深入探究，其实已经也了很多课程实验，由于内容是作为公司收费课程的，那部分就不放上来了，但是会持续更新，写一个系统全面的总结，也会掺杂自己的一些理解去解释，如果解释有误也欢迎大家在下方评论留言，共同">
-<meta name="twitter:image" content="https://i.loli.net/2019/10/15/am2rqV7Bp45eMG9.png">
+<meta name="twitter:title" content="【密】爬虫技术总结">
+<meta name="twitter:description" content="前言前几天出了《网络安全漏洞管理规定（征求意见稿》搞的表哥们都很慌，有些大佬准备封站删博客保平安了。具体的大家可以去看看里面的新规，以后像我这种菜鸡更难白嫖一些免费教程了。我发现很多安全群里都在搞爬博客爬公众号爬星球。有些站都爬瘫了。正好总结一下平时常用的一些工具和方法（一些热门网站资源扒取的技巧），这里只是总结探讨爬虫技术。千万不要去爬用户数据隐私等，否则后果自负。已经有好些人被抓了（51信用卡">
   
     <link rel="alternative" href="/atom.xml" title="SpongeB0B&#39;s Blog" type="application/atom+xml">
   
@@ -180,20 +178,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-恶意代码原理与分析基础" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-爬虫技术总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      恶意代码原理与分析基础
+      【密】爬虫技术总结
     </h1>
   
 
         
-        <a href="/2019/10/15/恶意代码原理与分析基础/" class="archive-article-date">
-  	<time datetime="2019-10-15T07:11:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+        <a href="/2019/11/29/爬虫技术总结/" class="archive-article-date">
+  	<time datetime="2019-11-29T08:19:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-29</time>
 </a>
         
       </header>
@@ -203,57 +201,22 @@ var _hmt = _hmt || [];
 	  
 	  
 
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前几天正好在学习免杀，这两天工作上的需要，要做恶意代码分析，所以就简单的学了一下，入了个门，发现还是非常有趣的，这篇博客主要是对学习过程中一些概念知识点的总结和整理，也方便以后自己复习和回忆，之后还会深入探究，其实已经也了很多课程实验，由于内容是作为公司收费课程的，那部分就不放上来了，但是会持续更新，写一个系统全面的总结，也会掺杂自己的一些理解去解释，如果解释有误也欢迎大家在下方评论留言，共同学习成长！<br><a id="more"></a></p>
-<h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><p>反病毒软件一般由扫描器、病毒库和虚拟机组成，并由主程序将它们整合为一体<br><img src="https://i.loli.net/2019/10/15/am2rqV7Bp45eMG9.png" alt="反病毒软件组成"></p>
-<ul>
-<li>扫描器用于查杀病毒，是反病毒软件的核心。描器的技术与算法是否先进对反病毒软件的效果有直接的影响。</li>
-<li>病毒库存储着恶意软件的<code>特征码</code>，病毒库的存储形式决定了扫描器的扫描方式。</li>
-<li>虚拟机与现实的CPU、硬盘等物理设备完全隔离，更加深入的检测文件的安全性。<h3 id="常见的基于文件扫描技术"><a href="#常见的基于文件扫描技术" class="headerlink" title="常见的基于文件扫描技术"></a>常见的基于文件扫描技术</h3></li>
-<li><p>基于文件扫描</p>
-<ul>
-<li>第一代扫描技术<ul>
-<li>字符串扫描技术</li>
-<li>通配符扫描技术</li>
-</ul>
-</li>
-<li><p>第二代扫描技术</p>
-<ul>
-<li><p>智能扫描法</p>
-<blockquote>
-<p>会忽略检测文件中nop等无意义的指令，文本格式病毒会替换掉多余的字符，这些操作都是在缓冲区中执行的，大大提高了扫描器的检测能力)</p>
-</blockquote>
-</li>
-<li><p>近似精确识别法</p>
-<blockquote>
-<p>多套特征码：采用两个或者更多字符集检测病毒<br>检验和：安全的文件生成一个校验和，扫描进行简单的校验和匹配，如果有变化再进一步扫描，否则说明未感染，这种方法大大提高了扫描器的效率。还可以对病毒文件采取分块校验，提高准确性   </p>
-</blockquote>
-</li>
-<li><p>骨架扫描法</p>
-<blockquote>
-<p>由卡巴斯基发明，检测宏病毒时效果特别好，无需特征码和校验和，逐行解析宏语句，丢弃非必要字符，剩下代码骨架，通过对代码骨架的分析，提高对病毒的检测能力。</p>
-</blockquote>
-</li>
-<li><p>精确识别扫描法</p>
-<blockquote>
-<p>保证扫描器精确识别病毒变种的唯一办法，常与第一代扫描技术相结合。精准识别法也是利用校验技术，应用更广泛，更复杂。它可以对整个病毒进行校验和计算生成特征图。</p>
-</blockquote>
-</li>
-<li><p>算法扫描</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>基于内存扫描</p>
-<blockquote>
-<p>内存扫描反病毒技术是一种原理复杂的扫描技术，内存扫描器一般与实时监控扫描器协作</p>
-</blockquote>
-</li>
-<li><p>基于行为监控</p>
-<blockquote>
-<p>基于行为监控的反病毒技术一般需要与虚拟机、主动防御等技术配合工作。其原理是主要针对病毒木马行为进行分析对比，如果某些程序在执行后会进行一些非常规的、可疑的操作，那么及时这不是一个新生病毒，也会被拥有这种技术的反病毒产品拦截。</p>
-</blockquote>
-</li>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前几天出了<code>《网络安全漏洞管理规定（征求意见稿》</code>搞的表哥们都很慌，有些大佬准备封站删博客保平安了。具体的大家可以去看看里面的新规，以后像我这种菜鸡更难白嫖一些免费教程了。我发现很多安全群里都在搞爬博客爬公众号爬星球。有些站都爬瘫了。正好总结一下平时常用的一些工具和方法（一些热门网站资源扒取的技巧），这里只是总结探讨爬虫技术。千万不要去爬用户数据隐私等，否则后果自负。已经有好些人被抓了（51信用卡等案例就不多说了）。关于爬虫的法律法规gayhub已经有人总结整理了案例，有兴趣可以了解一下。<br><a href="https://github.com/HiddenStrawberry/Crawler_Illegal_Cases_In_China" target="_blank" rel="noopener">中国大陆爬虫开发者涉诉与违规相关的新闻、资料与法律法规案例收集</a><br><a id="more"></a></p>
+<h3 id="使用wget命令爬网站（wiki、blog等）"><a href="#使用wget命令爬网站（wiki、blog等）" class="headerlink" title="使用wget命令爬网站（wiki、blog等）"></a>使用wget命令爬网站（wiki、blog等）</h3><p>可以<code>wget -h</code>或者<code>--help</code>去查看各个参数。常用的一些</p>
+<h5 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h5><p>-c  # 断点续传<br>-r  # 递归下载<br>-np  # 递归下载时不搜索上层目录<br>-nv  # 显示简要信息<br>-nd  # 递归下载时不创建一层一层的目录,把所有文件下载当前文件夹中<br>-p  # 下载网页所需要的所有文件(图片,样式,js文件等)<br>-H  # 当递归时是转到外部主机下载图片或链接<br>-k  # 将绝对链接转换为相对链接,这样就可以在本地脱机浏览网页了<br>-L  # 只扩展相对连接，该参数对于抓取指定站点很有用，可以避免向宿主主机</p>
+<h5 id="设置Cookie"><a href="#设置Cookie" class="headerlink" title="设置Cookie"></a>设置Cookie</h5><p>–header=”Cookie: PHPSESSID=p4e51ihjf57ovvc9lui2abkvi0; first_vist=1;”</p>
+<h5 id="设置-User-Agent-为微信PC端"><a href="#设置-User-Agent-为微信PC端" class="headerlink" title="设置 User-Agent 为微信PC端"></a>设置 User-Agent 为微信PC端</h5><p>–user-agent=”Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 MicroMessenger/6.5.2.501 NetType/WIFI WindowsWechat QBCore/3.43.901.400 QQBrowser/9.0.2524.400”</p>
+<h5 id="伪造-Cookie、User-Agent-爬取"><a href="#伪造-Cookie、User-Agent-爬取" class="headerlink" title="伪造 Cookie、User-Agent 爬取"></a>伪造 Cookie、User-Agent 爬取</h5><p>wget -c -r -npH -p -k -nv –header=”Cookie: first_vist=1;”  –user-agent=’Mozilla/5.0 (Windows NT 6.1; WOW64) …’ <a href="http://updatebrowser.netnr.com/" target="_blank" rel="noopener">http://updatebrowser.netnr.com/</a></p>
+<h5 id="基本爬站命令"><a href="#基本爬站命令" class="headerlink" title="基本爬站命令"></a>基本爬站命令</h5><p>wget -r -p -np -k <a href="http://www.0-sec.org" target="_blank" rel="noopener">www.0-sec.org</a><br>k -p -nH -N –no-check-certificate #针对https，带证书忽略<br>-e robots=off #忽略robots</p>
+<h5 id="常用爬站命令"><a href="#常用爬站命令" class="headerlink" title="常用爬站命令"></a>常用爬站命令</h5><p>wget -r -p -np -e robots=off -k -E <a href="http://www.xxx.com/" target="_blank" rel="noopener">http://www.xxx.com/</a> –no-check-certificate -t 1</p>
+<h3 id="下载（扒）B站（www-bilibili-com）视频"><a href="#下载（扒）B站（www-bilibili-com）视频" class="headerlink" title="下载（扒）B站（www.bilibili.com）视频"></a>下载（扒）B站（<a href="http://www.bilibili.com）视频" target="_blank" rel="noopener">www.bilibili.com）视频</a></h3><p>之前爬B站视频有两个在线的网站很方便，现在功能有些限制了，需要关注什么公众号才能用（这个也无可厚非，工具作者通过一些流量收益去维持工具更新和服务器）或者下载失败。其实B站对于本身的视频并没有太多防护（目前为止是这样，只要网站不大改，介绍的这个方法都适用）。<br>先介绍一下手动逐个下载的方法，批量其实一样，只不过就是把这个流程用脚本批量完成。脚本没放上来，因为最近没时间写。[/狗头]</p>
+<h5 id="1、方法一：下载-amp-配置youtube-dl-exe（通用方法）"><a href="#1、方法一：下载-amp-配置youtube-dl-exe（通用方法）" class="headerlink" title="1、方法一：下载&amp;配置youtube-dl.exe（通用方法）"></a>1、方法一：下载&amp;配置youtube-dl.exe（通用方法）</h5><p>官方介绍已经很详细了，安装和参数解释都讲的很清楚了。<a href="https://github.com/ytdl-org/youtube-dl" target="_blank" rel="noopener">官方项目地址</a><br>我这里是<code>win10</code>，介绍<code>windows</code>上的使用，其他系统也一样，都是命令行工具。<a href="https://github.com/ytdl-org/youtube-dl/releases/download/2020.01.15/youtube-dl.exe" target="_blank" rel="noopener">youtube-dl.exe</a><br>下载完放在一个目录下（除了系统的<code>system32</code>目录外）。然后方便我们使用，把它添加到环境变量里（环境变量的作用：你使用命令运行的时候会去path变量的所有路径里寻找程序，如果没有添加，只能在exe所在目录下执行命令，添加以后就可以和linux在如何地方都可以运行命令）。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#链接替换你下载的，如果是系列课程后面一般会有?p=1，数字对应集数</span></span><br><span class="line"><span class="comment">#-o 后面跟的是输出路径和文件名，这样表示输出文件在当前所在目录，filename.m4s是文件名</span></span><br><span class="line">youtube-dl http://www.bilibili.com/video/av12345 -o <span class="string">"filename.m4s"</span></span><br><span class="line"><span class="comment">#因为B站的视频是m4s的格式，这里后缀随便写或不写都没事。</span></span><br></pre></td></tr></table></figure></p>
+<p>然后下载完会有m4s文件，然后再用<code>格式工厂</code>，选择<code>——&gt;MP4</code>，再把所有需要转换的文件拖进弹出来的对话框里，点击确定，点击<code>开始</code>等待转换完成就好了，如果有需求也可以配置一下转换出来视频的参数。<br><strong>ffmpeg</strong>:这个工具可以对音频切割、合并、转换、去水印、打码、以及m3u8切片加密等，很多网站的视频都可以用这个去处理（网易云课程、i春秋等），大部分视频处理工具底层也是这个（格式工厂等），很建议大家学习一下这个开源工具的使用。不用太过依赖现成的工具，要多了解点原理。</p>
+<h5 id="2-现成的资源嗅探工具"><a href="#2-现成的资源嗅探工具" class="headerlink" title="2.现成的资源嗅探工具"></a>2.现成的资源嗅探工具</h5><ul>
+<li>chrome插件-<code>Flash Video Downloader</code></li>
+<li>IDMan浏览器插件</li>
+<li><a href="http://www.bilibilijj.com" target="_blank" rel="noopener">www.bilibilijj.com</a></li>
+<li><a href="http://www.ibilibili.com" target="_blank" rel="noopener">www.ibilibili.com</a><br><strong>注：</strong> 后面两个在线工具也有下载版的exe，最后一个需要关注公众号，前面两个插件下载下来同样是m4s文件，需要格式工厂转码，有时候会嗅探不完整。</li>
 </ul>
 
       
@@ -299,15 +262,19 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">strings</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wget</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">UPX</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">恶意软件</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">youtube-dl</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">B站</a>
         		</li>
       		
 		</ul>
@@ -363,7 +330,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/15/恶意代码原理与分析基础/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/29/爬虫技术总结/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -377,18 +344,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/11/05/IT知识小科普/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          IT知识小科普
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/11/kali环境配置以及工具安装/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">kali环境配置以及工具安装</div>
+    <a href="/2019/11/19/【密】简单逆向工程习题详解write up/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【密】简单逆向工程习题详解write up</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -415,7 +373,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#预备知识"><span class="toc-number">1.0.1.</span> <span class="toc-text">预备知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见的基于文件扫描技术"><span class="toc-number">1.0.2.</span> <span class="toc-text">常见的基于文件扫描技术</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用wget命令爬网站（wiki、blog等）"><span class="toc-number">2.</span> <span class="toc-text">使用wget命令爬网站（wiki、blog等）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#参数说明"><span class="toc-number">2.0.1.</span> <span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#设置Cookie"><span class="toc-number">2.0.2.</span> <span class="toc-text">设置Cookie</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#设置-User-Agent-为微信PC端"><span class="toc-number">2.0.3.</span> <span class="toc-text">设置 User-Agent 为微信PC端</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#伪造-Cookie、User-Agent-爬取"><span class="toc-number">2.0.4.</span> <span class="toc-text">伪造 Cookie、User-Agent 爬取</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#基本爬站命令"><span class="toc-number">2.0.5.</span> <span class="toc-text">基本爬站命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#常用爬站命令"><span class="toc-number">2.0.6.</span> <span class="toc-text">常用爬站命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载（扒）B站（www-bilibili-com）视频"><span class="toc-number">3.</span> <span class="toc-text">下载（扒）B站（www.bilibili.com）视频</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、方法一：下载-amp-配置youtube-dl-exe（通用方法）"><span class="toc-number">3.0.1.</span> <span class="toc-text">1、方法一：下载&amp;配置youtube-dl.exe（通用方法）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-现成的资源嗅探工具"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.现成的资源嗅探工具</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -440,7 +398,7 @@ var _hmt = _hmt || [];
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2019/10/15/恶意代码原理与分析基础/",
+  id: "http://yoursite.com/2019/11/29/爬虫技术总结/",
   owner: 'yehongning',
   repo: 'yehongning.github.io',
   oauth: {

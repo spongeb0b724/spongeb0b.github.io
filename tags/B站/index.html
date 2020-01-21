@@ -6,22 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>恶意代码原理与分析基础 | SpongeB0B&#39;s Blog</title>
+  <title>Tag: B站 | SpongeB0B&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言前几天正好在学习免杀，这两天工作上的需要，要做恶意代码分析，所以就简单的学了一下，入了个门，发现还是非常有趣的，这篇博客主要是对学习过程中一些概念知识点的总结和整理，也方便以后自己复习和回忆，之后还会深入探究，其实已经也了很多课程实验，由于内容是作为公司收费课程的，那部分就不放上来了，但是会持续更新，写一个系统全面的总结，也会掺杂自己的一些理解去解释，如果解释有误也欢迎大家在下方评论留言，共同">
-<meta name="keywords" content="strings,UPX,恶意软件">
-<meta property="og:type" content="article">
-<meta property="og:title" content="恶意代码原理与分析基础">
-<meta property="og:url" content="http://yoursite.com/2019/10/15/恶意代码原理与分析基础/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="SpongeB0B&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/tags/B站/index.html">
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
-<meta property="og:description" content="前言前几天正好在学习免杀，这两天工作上的需要，要做恶意代码分析，所以就简单的学了一下，入了个门，发现还是非常有趣的，这篇博客主要是对学习过程中一些概念知识点的总结和整理，也方便以后自己复习和回忆，之后还会深入探究，其实已经也了很多课程实验，由于内容是作为公司收费课程的，那部分就不放上来了，但是会持续更新，写一个系统全面的总结，也会掺杂自己的一些理解去解释，如果解释有误也欢迎大家在下方评论留言，共同">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/10/15/am2rqV7Bp45eMG9.png">
-<meta property="og:updated_time" content="2019-10-26T01:27:16.917Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="恶意代码原理与分析基础">
-<meta name="twitter:description" content="前言前几天正好在学习免杀，这两天工作上的需要，要做恶意代码分析，所以就简单的学了一下，入了个门，发现还是非常有趣的，这篇博客主要是对学习过程中一些概念知识点的总结和整理，也方便以后自己复习和回忆，之后还会深入探究，其实已经也了很多课程实验，由于内容是作为公司收费课程的，那部分就不放上来了，但是会持续更新，写一个系统全面的总结，也会掺杂自己的一些理解去解释，如果解释有误也欢迎大家在下方评论留言，共同">
-<meta name="twitter:image" content="https://i.loli.net/2019/10/15/am2rqV7Bp45eMG9.png">
+<meta name="twitter:title" content="SpongeB0B&#39;s Blog">
   
     <link rel="alternative" href="/atom.xml" title="SpongeB0B&#39;s Blog" type="application/atom+xml">
   
@@ -180,277 +173,72 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-恶意代码原理与分析基础" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      恶意代码原理与分析基础
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/11/29/爬虫技术总结/" class="archive-article-date">
+  	<time datetime="2019-11-29T08:19:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-29</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/11/29/爬虫技术总结/">【密】爬虫技术总结</a>
     </h1>
   
 
-        
-        <a href="/2019/10/15/恶意代码原理与分析基础/" class="archive-article-date">
-  	<time datetime="2019-10-15T07:11:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-	  
-	  
-
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前几天正好在学习免杀，这两天工作上的需要，要做恶意代码分析，所以就简单的学了一下，入了个门，发现还是非常有趣的，这篇博客主要是对学习过程中一些概念知识点的总结和整理，也方便以后自己复习和回忆，之后还会深入探究，其实已经也了很多课程实验，由于内容是作为公司收费课程的，那部分就不放上来了，但是会持续更新，写一个系统全面的总结，也会掺杂自己的一些理解去解释，如果解释有误也欢迎大家在下方评论留言，共同学习成长！<br><a id="more"></a></p>
-<h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><p>反病毒软件一般由扫描器、病毒库和虚拟机组成，并由主程序将它们整合为一体<br><img src="https://i.loli.net/2019/10/15/am2rqV7Bp45eMG9.png" alt="反病毒软件组成"></p>
-<ul>
-<li>扫描器用于查杀病毒，是反病毒软件的核心。描器的技术与算法是否先进对反病毒软件的效果有直接的影响。</li>
-<li>病毒库存储着恶意软件的<code>特征码</code>，病毒库的存储形式决定了扫描器的扫描方式。</li>
-<li>虚拟机与现实的CPU、硬盘等物理设备完全隔离，更加深入的检测文件的安全性。<h3 id="常见的基于文件扫描技术"><a href="#常见的基于文件扫描技术" class="headerlink" title="常见的基于文件扫描技术"></a>常见的基于文件扫描技术</h3></li>
-<li><p>基于文件扫描</p>
-<ul>
-<li>第一代扫描技术<ul>
-<li>字符串扫描技术</li>
-<li>通配符扫描技术</li>
-</ul>
-</li>
-<li><p>第二代扫描技术</p>
-<ul>
-<li><p>智能扫描法</p>
-<blockquote>
-<p>会忽略检测文件中nop等无意义的指令，文本格式病毒会替换掉多余的字符，这些操作都是在缓冲区中执行的，大大提高了扫描器的检测能力)</p>
-</blockquote>
-</li>
-<li><p>近似精确识别法</p>
-<blockquote>
-<p>多套特征码：采用两个或者更多字符集检测病毒<br>检验和：安全的文件生成一个校验和，扫描进行简单的校验和匹配，如果有变化再进一步扫描，否则说明未感染，这种方法大大提高了扫描器的效率。还可以对病毒文件采取分块校验，提高准确性   </p>
-</blockquote>
-</li>
-<li><p>骨架扫描法</p>
-<blockquote>
-<p>由卡巴斯基发明，检测宏病毒时效果特别好，无需特征码和校验和，逐行解析宏语句，丢弃非必要字符，剩下代码骨架，通过对代码骨架的分析，提高对病毒的检测能力。</p>
-</blockquote>
-</li>
-<li><p>精确识别扫描法</p>
-<blockquote>
-<p>保证扫描器精确识别病毒变种的唯一办法，常与第一代扫描技术相结合。精准识别法也是利用校验技术，应用更广泛，更复杂。它可以对整个病毒进行校验和计算生成特征图。</p>
-</blockquote>
-</li>
-<li><p>算法扫描</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>基于内存扫描</p>
-<blockquote>
-<p>内存扫描反病毒技术是一种原理复杂的扫描技术，内存扫描器一般与实时监控扫描器协作</p>
-</blockquote>
-</li>
-<li><p>基于行为监控</p>
-<blockquote>
-<p>基于行为监控的反病毒技术一般需要与虚拟机、主动防御等技术配合工作。其原理是主要针对病毒木马行为进行分析对比，如果某些程序在执行后会进行一些非常规的、可疑的操作，那么及时这不是一个新生病毒，也会被拥有这种技术的反病毒产品拦截。</p>
-</blockquote>
-</li>
-</ul>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢鼓励！｡◕ᴗ◕｡<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/weixin.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">strings</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wget</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">UPX</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">恶意软件</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">youtube-dl</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">B站</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/15/恶意代码原理与分析基础/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/11/05/IT知识小科普/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          IT知识小科普
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/10/11/kali环境配置以及工具安装/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">kali环境配置以及工具安装</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#预备知识"><span class="toc-number">1.0.1.</span> <span class="toc-text">预备知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见的基于文件扫描技术"><span class="toc-number">1.0.2.</span> <span class="toc-text">常见的基于文件扫描技术</span></a></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2019/10/15/恶意代码原理与分析基础/",
-  owner: 'yehongning',
-  repo: 'yehongning.github.io',
-  oauth: {
-    client_id: '49ddd2ad51d791ace91c',
-    client_secret: '0b400e3b9dd89b72272e47c7b15fd2a8b031d05c',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -486,9 +274,9 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
