@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/11/29/o5qfLRjeNl9KCSm.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/29/BoavkExRA2T83sO.png">
 <meta property="og:image" content="https://i.loli.net/2019/11/29/jxAOoIJScLukleY.png">
-<meta property="og:updated_time" content="2020-02-18T01:41:09.972Z">
+<meta property="og:updated_time" content="2020-02-18T06:55:31.738Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单逆向工程习题详解write up">
 <meta name="twitter:description" content="前言很多时候在讲课过程中，有些学员觉得讲的太快或者还不能完全理解。因此写这篇博客方便大家课后复习回顾。大家如果有什么问题也可以在下面评论(我如果看到会处理回复的)。或者加入安恒萌新粉丝群：928102972共同交流学习！！！对于下面这些题目的话，如果没有特殊说明，crack_xxx文件是破解成功的。">
@@ -269,7 +269,7 @@ var _hmt = _hmt || [];
 <ul>
 <li>1.反编译<br>将APK拖入<code>jadx</code>看一下反编译java代码<br><img src="https://i.loli.net/2019/11/27/JPQmbj2suRfDn5a.png" alt="反编译源代码"></li>
 <li>2.1逻辑分析<ul>
-<li>(1)解出输入的字符串<br>如果大家对<code>凯撒密码</code>比较熟悉，看这个逻辑很容易看出来是一个凯撒移位，这里的凯撒移位的原理可以看下面的分析（也可以把这部分代码复制出来运行一下跑出来）这里对a字符串<code>ThisIsTheFlagHome</code>进行往前移动<code>8位</code>生成答案<code>LzakAkLzwXdsyZgew</code>，输入即可弹出flag。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...ABCDEFGHIJKLMNOPQRSTUVWXYZ...abcdefghijklmnopqrstuvwxyz...    #ASCII表</span><br><span class="line">	                 ABCDEFGH                     abcdefgh         #第一个if将A-H和a-h进行往后移动18位</span><br><span class="line">...                          ...                          ...    #第二个if限定除了A-Z和a-z以外的字符串不变</span><br><span class="line">   IJKLMNOPQRSTUVWXYZ           ijklmnopqrstuvwxyz               #第三个if将剩下部分往前移动8位</span><br><span class="line">...IJKLMNOPQRSTUVWXYZABCDEFGH...ijklmnopqrstuvwxyzabcdefgh...    #最终生成新的编码表，凯撒往后移动18位/往前移8位</span><br></pre></td></tr></table></figure>
+<li>(1)解出输入的字符串<br>如果大家对<code>凯撒密码</code>比较熟悉，看这个逻辑很容易看出来是一个凯撒移位，这里的凯撒移位的原理可以看下面的分析（也可以把这部分代码复制出来运行一下跑出来）这里对a字符串<code>ThisIsTheFlagHome</code>进行往前移动<code>8位</code>生成答案<code>LzakAkLzwXdsyZgew</code>，输入即可弹出flag。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...ABCDEFGHIJKLMNOPQRSTUVWXYZ...abcdefghijklmnopqrstuvwxyz...    #ASCII表  </span><br><span class="line">                     ABCDEFGH                     abcdefgh       #第一个if将A-H和a-h进行往后移动18位</span><br><span class="line">...                          ...                          ...    #第二个if限定除了A-Z和a-z以外的字符串不变</span><br><span class="line">   IJKLMNOPQRSTUVWXYZ           ijklmnopqrstuvwxyz               #第三个if将剩下部分往前移动8位</span><br><span class="line">...IJKLMNOPQRSTUVWXYZABCDEFGH...ijklmnopqrstuvwxyzabcdefgh...    #最终生成新的编码表，凯撒往后移动18位/往前移8位</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -609,10 +609,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">binwalk</a>
               </li>
              
@@ -657,15 +653,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">物联网安全</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能硬件</a>
+                <a href="javascript:void(0)" class="js-tag color2">IDA Pro 7.0</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">固件安全</a>
+                <a href="javascript:void(0)" class="js-tag color4">IDA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">逆向分析</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -685,15 +685,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">IDA Pro 7.0</a>
+                <a href="javascript:void(0)" class="js-tag color1">物联网安全</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">IDA</a>
+                <a href="javascript:void(0)" class="js-tag color5">智能硬件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">逆向分析</a>
+                <a href="javascript:void(0)" class="js-tag color5">固件安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -729,22 +729,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">foremost</a>
               </li>
              
@@ -773,6 +757,30 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pwn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pwntools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ctf</a>
               </li>
              
@@ -794,14 +802,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文件上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pwn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pwntools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -849,6 +849,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">移动安全</a>
               </li>
              
@@ -869,19 +885,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -921,18 +933,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CTF</a>
               </li>
              
@@ -946,18 +946,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">恶意软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数字取证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">密码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">misc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1010,6 +998,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数字取证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">密码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">misc</a>
               </li>
             
             <div class="clearfix"></div>
