@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="SpongeB0B&#39;s Blog">
 <meta property="og:description" content="前言前几天出了《网络安全漏洞管理规定（征求意见稿》搞的表哥们都很慌，有些大佬准备封站删博客保平安了。具体的大家可以去看看里面的新规，以后像我这种菜鸡更难白嫖一些免费教程了。我发现很多安全群里都在搞爬博客爬公众号爬星球。有些站都爬瘫了。正好总结一下平时常用的一些工具和方法（一些热门网站资源扒取的技巧），这里只是总结探讨爬虫技术。千万不要去爬用户数据隐私等，否则后果自负。已经有好些人被抓了（51信用卡">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-21T08:25:19.160Z">
+<meta property="og:updated_time" content="2020-03-03T03:16:00.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫技术总结">
 <meta name="twitter:description" content="前言前几天出了《网络安全漏洞管理规定（征求意见稿》搞的表哥们都很慌，有些大佬准备封站删博客保平安了。具体的大家可以去看看里面的新规，以后像我这种菜鸡更难白嫖一些免费教程了。我发现很多安全群里都在搞爬博客爬公众号爬星球。有些站都爬瘫了。正好总结一下平时常用的一些工具和方法（一些热门网站资源扒取的技巧），这里只是总结探讨爬虫技术。千万不要去爬用户数据隐私等，否则后果自负。已经有好些人被抓了（51信用卡">
@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
 <h5 id="设置Cookie"><a href="#设置Cookie" class="headerlink" title="设置Cookie"></a>设置Cookie</h5><p>–header=”Cookie: PHPSESSID=p4e51ihjf57ovvc9lui2abkvi0; first_vist=1;”</p>
 <h5 id="设置-User-Agent-为微信PC端"><a href="#设置-User-Agent-为微信PC端" class="headerlink" title="设置 User-Agent 为微信PC端"></a>设置 User-Agent 为微信PC端</h5><p>–user-agent=”Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 MicroMessenger/6.5.2.501 NetType/WIFI WindowsWechat QBCore/3.43.901.400 QQBrowser/9.0.2524.400”</p>
 <h5 id="伪造-Cookie、User-Agent-爬取"><a href="#伪造-Cookie、User-Agent-爬取" class="headerlink" title="伪造 Cookie、User-Agent 爬取"></a>伪造 Cookie、User-Agent 爬取</h5><p>wget -c -r -npH -p -k -nv –header=”Cookie: first_vist=1;”  –user-agent=’Mozilla/5.0 (Windows NT 6.1; WOW64) …’ <a href="http://updatebrowser.netnr.com/" target="_blank" rel="noopener">http://updatebrowser.netnr.com/</a></p>
-<h5 id="基本爬站命令"><a href="#基本爬站命令" class="headerlink" title="基本爬站命令"></a>基本爬站命令</h5><p>wget -r -p -np -k <a href="http://www.0-sec.org" target="_blank" rel="noopener">www.0-sec.org</a><br>k -p -nH -N –no-check-certificate #针对https，带证书忽略<br>-e robots=off #忽略robots</p>
+<h5 id="基本爬站命令"><a href="#基本爬站命令" class="headerlink" title="基本爬站命令"></a>基本爬站命令</h5><p>wget -r -p -np -k <a href="http://www.xxx.org" target="_blank" rel="noopener">www.xxx.org</a><br>k -p -nH -N –no-check-certificate #针对https，带证书忽略<br>-e robots=off #忽略robots</p>
 <h5 id="常用爬站命令"><a href="#常用爬站命令" class="headerlink" title="常用爬站命令"></a>常用爬站命令</h5><p>wget -r -p -np -e robots=off -k -E <a href="http://www.xxx.com/" target="_blank" rel="noopener">http://www.xxx.com/</a> –no-check-certificate -t 1</p>
 <h3 id="下载（扒）B站（www-bilibili-com）视频"><a href="#下载（扒）B站（www-bilibili-com）视频" class="headerlink" title="下载（扒）B站（www.bilibili.com）视频"></a>下载（扒）B站（<a href="http://www.bilibili.com）视频" target="_blank" rel="noopener">www.bilibili.com）视频</a></h3><p>之前爬B站视频有两个在线的网站很方便，现在功能有些限制了，需要关注什么公众号才能用（这个也无可厚非，工具作者通过一些流量收益去维持工具更新和服务器）或者下载失败。其实B站对于本身的视频并没有太多防护（目前为止是这样，只要网站不大改，介绍的这个方法都适用）。<br>先介绍一下手动逐个下载的方法，批量其实一样，只不过就是把这个流程用脚本批量完成。脚本没放上来，因为最近没时间写。[/狗头]</p>
 <h5 id="1、方法一：下载-amp-配置youtube-dl-exe（通用方法）"><a href="#1、方法一：下载-amp-配置youtube-dl-exe（通用方法）" class="headerlink" title="1、方法一：下载&amp;配置youtube-dl.exe（通用方法）"></a>1、方法一：下载&amp;配置youtube-dl.exe（通用方法）</h5><p>官方介绍已经很详细了，安装和参数解释都讲的很清楚了。<a href="https://github.com/ytdl-org/youtube-dl" target="_blank" rel="noopener">官方项目地址</a><br>我这里是<code>win10</code>，介绍<code>windows</code>上的使用，其他系统也一样，都是命令行工具。<a href="https://github.com/ytdl-org/youtube-dl/releases/download/2020.01.15/youtube-dl.exe" target="_blank" rel="noopener">youtube-dl.exe</a><br>下载完放在一个目录下（除了系统的<code>system32</code>目录外）。然后方便我们使用，把它添加到环境变量里（环境变量的作用：你使用命令运行的时候会去path变量的所有路径里寻找程序，如果没有添加，只能在exe所在目录下执行命令，添加以后就可以和linux在如何地方都可以运行命令）。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#链接替换你下载的，如果是系列课程后面一般会有?p=1，数字对应集数</span></span><br><span class="line"><span class="comment">#-o 后面跟的是输出路径和文件名，这样表示输出文件在当前所在目录，filename.m4s是文件名</span></span><br><span class="line">youtube-dl http://www.bilibili.com/video/av12345 -o <span class="string">"filename.m4s"</span></span><br><span class="line"><span class="comment">#因为B站的视频是m4s的格式，这里后缀随便写或不写都没事。</span></span><br></pre></td></tr></table></figure></p>
@@ -595,6 +595,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">物联网安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">智能硬件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">固件安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">科普</a>
               </li>
              
@@ -611,18 +623,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">物联网安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">智能硬件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">固件安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">burpsuite</a>
               </li>
              
@@ -632,26 +632,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">破解版安装激活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">容器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">镜像</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -668,42 +648,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">参数详解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">kali</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">firmware-mod-kit</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">系统命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pwn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pwntools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -731,31 +675,47 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安装</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
+                <a href="javascript:void(0)" class="js-tag color3">容器</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">winhex</a>
+                <a href="javascript:void(0)" class="js-tag color3">镜像</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ctf misc</a>
+                <a href="javascript:void(0)" class="js-tag color1">Dockerfile</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">十六进制编辑</a>
+                <a href="javascript:void(0)" class="js-tag color3">抓包</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">修改软件</a>
+                <a href="javascript:void(0)" class="js-tag color3">爆破</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">刷票</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">逻辑漏洞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pwn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pwntools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -775,19 +735,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">kali</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">firmware-mod-kit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">系统命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -811,15 +771,43 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
+                <a href="javascript:void(0)" class="js-tag color2">winhex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+                <a href="javascript:void(0)" class="js-tag color4">ctf misc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+                <a href="javascript:void(0)" class="js-tag color2">十六进制编辑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">修改软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">社会工程学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">凯文·米特尼克</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">欺骗的艺术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础语法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -863,18 +851,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">strings</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UPX</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">恶意软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
@@ -895,6 +871,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">恶意软件分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wget</a>
               </li>
              
@@ -911,6 +899,30 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">strings</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UPX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">恶意软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数字取证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">密码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">misc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Android逆向</a>
               </li>
              
@@ -924,18 +936,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">flag</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数字取证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">密码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">misc</a>
               </li>
             
             <div class="clearfix"></div>
